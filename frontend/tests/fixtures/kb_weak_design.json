@@ -1,0 +1,302 @@
+{
+    "results": [
+        {
+            "course_id": "COMPSCI 162",
+            "course_db_id": 5,
+            "course_title": "Operating Systems and System Programming",
+            "matched_reason": "Title/summary contains query term(s): design.",
+            "match_signals": [
+                {
+                    "type": "query_term_match",
+                    "detail": "Title/summary contains query term(s): design."
+                }
+            ],
+            "match_strength": "weak",
+            "facts": [
+                {
+                    "label": "Title",
+                    "value": "Operating Systems and System Programming",
+                    "verbatim": true,
+                    "source_url": "https://www2.eecs.berkeley.edu/Courses/COMPSCI162/index.html"
+                },
+                {
+                    "label": "Units",
+                    "value": "4",
+                    "verbatim": true,
+                    "source_url": "https://www2.eecs.berkeley.edu/Courses/COMPSCI162/index.html"
+                },
+                {
+                    "label": "Also known as",
+                    "value": "CS 162, CS162",
+                    "verbatim": false,
+                    "source_url": "https://www2.eecs.berkeley.edu/Courses/COMPSCI162/index.html"
+                },
+                {
+                    "label": "Summary (paraphrased)",
+                    "value": "Operating system design and system-level programming: processes, threads, synchronization, memory management, file systems, I/O, scheduling, and security.",
+                    "verbatim": false,
+                    "source_url": "https://www2.eecs.berkeley.edu/Courses/COMPSCI162/index.html"
+                },
+                {
+                    "label": "Prerequisite (official wording)",
+                    "value": "COMPSCI 61B, COMPSCI 61C, and COMPSCI 70.",
+                    "verbatim": true,
+                    "source_url": "https://www2.eecs.berkeley.edu/Courses/COMPSCI162/index.html"
+                }
+            ],
+            "sources": [
+                {
+                    "title": "Berkeley EECS department course page \u2014 COMPSCI 162",
+                    "url": "https://www2.eecs.berkeley.edu/Courses/COMPSCI162/index.html",
+                    "source_type": "official",
+                    "retrieved_at": "2026-11-09T17:58:00.000Z",
+                    "verification_status": "verified_possibly_stale"
+                }
+            ]
+        },
+        {
+            "course_id": "COMPSCI 170",
+            "course_db_id": 6,
+            "course_title": "Efficient Algorithms and Intractable Problems",
+            "matched_reason": "Title/summary contains query term(s): design.",
+            "match_signals": [
+                {
+                    "type": "query_term_match",
+                    "detail": "Title/summary contains query term(s): design."
+                }
+            ],
+            "match_strength": "weak",
+            "facts": [
+                {
+                    "label": "Title",
+                    "value": "Efficient Algorithms and Intractable Problems",
+                    "verbatim": true,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1042811"
+                },
+                {
+                    "label": "Units",
+                    "value": "4",
+                    "verbatim": true,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1042811"
+                },
+                {
+                    "label": "Also known as",
+                    "value": "CS 170, CS170",
+                    "verbatim": false,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1042811"
+                },
+                {
+                    "label": "Summary (paraphrased)",
+                    "value": "Design and analysis of efficient algorithms, lower bounds and data structures, then models of computation, NP-completeness, and intractable or unsolvable problems.",
+                    "verbatim": false,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1042811"
+                },
+                {
+                    "label": "Prerequisite (official wording)",
+                    "value": "COMPSCI 61B and COMPSCI 70.",
+                    "verbatim": true,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1042811"
+                }
+            ],
+            "sources": [
+                {
+                    "title": "UC Berkeley Catalog \u2014 COMPSCI 170",
+                    "url": "https://undergraduate.catalog.berkeley.edu/courses/1042811",
+                    "source_type": "official",
+                    "retrieved_at": "2026-11-09T17:50:00.000Z",
+                    "verification_status": "verified"
+                }
+            ]
+        },
+        {
+            "course_id": "COMPSCI 61C",
+            "course_db_id": 3,
+            "course_title": "Great Ideas of Computer Architecture (Machine Structures)",
+            "matched_reason": "Title/summary contains query term(s): design.",
+            "match_signals": [
+                {
+                    "type": "query_term_match",
+                    "detail": "Title/summary contains query term(s): design."
+                }
+            ],
+            "match_strength": "weak",
+            "facts": [
+                {
+                    "label": "Title",
+                    "value": "Great Ideas of Computer Architecture (Machine Structures)",
+                    "verbatim": true,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1044281"
+                },
+                {
+                    "label": "Units",
+                    "value": "4",
+                    "verbatim": true,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1044281"
+                },
+                {
+                    "label": "Also known as",
+                    "value": "CS 61C, CS61C",
+                    "verbatim": false,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1044281"
+                },
+                {
+                    "label": "Summary (paraphrased)",
+                    "value": "How computers are organized internally: machine architecture, support for high-level languages, OS mechanisms (I/O, interrupts, memory management, process switching), and logic design basics.",
+                    "verbatim": false,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1044281"
+                },
+                {
+                    "label": "Prerequisite (official wording)",
+                    "value": "COMPSCI 61A | COMPSCI 61B or 61BL, or programming experience equivalent to that gained in 9C, 9F, or 9G.",
+                    "verbatim": true,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1044281"
+                }
+            ],
+            "sources": [
+                {
+                    "title": "UC Berkeley Catalog \u2014 COMPSCI 61C",
+                    "url": "https://undergraduate.catalog.berkeley.edu/courses/1044281",
+                    "source_type": "official",
+                    "retrieved_at": "2026-11-09T17:50:00.000Z",
+                    "verification_status": "partial"
+                }
+            ]
+        },
+        {
+            "course_id": "DATA C102",
+            "course_db_id": 13,
+            "course_title": "Data, Inference, and Decisions",
+            "matched_reason": "Title/summary contains query term(s): design.",
+            "match_signals": [
+                {
+                    "type": "query_term_match",
+                    "detail": "Title/summary contains query term(s): design."
+                }
+            ],
+            "match_strength": "weak",
+            "facts": [
+                {
+                    "label": "Title",
+                    "value": "Data, Inference, and Decisions",
+                    "verbatim": true,
+                    "source_url": "https://graduate.catalog.berkeley.edu/courses/1583262"
+                },
+                {
+                    "label": "Units",
+                    "value": "4",
+                    "verbatim": true,
+                    "source_url": "https://graduate.catalog.berkeley.edu/courses/1583262"
+                },
+                {
+                    "label": "Also known as",
+                    "value": "STAT 102, Data 102, DATA 102",
+                    "verbatim": false,
+                    "source_url": "https://graduate.catalog.berkeley.edu/courses/1583262"
+                },
+                {
+                    "label": "Summary (paraphrased)",
+                    "value": "Probabilistic foundations of inference and the modeling-to-decision cycle, including its social and ethical side: hypothesis testing, causal inference, experimental design, Bayesian methods, privacy, recommender systems and an introduction to machine learning.",
+                    "verbatim": false,
+                    "source_url": "https://graduate.catalog.berkeley.edu/courses/1583262"
+                },
+                {
+                    "label": "Prerequisite (official wording)",
+                    "value": "Math 54 or 56 or 110 or Stat 89A or Physics 89 or both of ELENG 64 and ELENG 66 with a C- or better, or Pass; | Data/Stat/CompSci C100 with a C- or better, or Pass; and any of EECS 126, Data/Stat C140, Stat 134, | IndEng 172, Math 106 with a C- or better, or Pass. Data/Stat C140 or EECS 126 are preferred",
+                    "verbatim": true,
+                    "source_url": "https://graduate.catalog.berkeley.edu/courses/1583262"
+                },
+                {
+                    "label": "Recommendation (official wording)",
+                    "value": "Data/Stat C140 or EECS 126 are preferred",
+                    "verbatim": true,
+                    "source_url": "https://graduate.catalog.berkeley.edu/courses/1583262"
+                }
+            ],
+            "sources": [
+                {
+                    "title": "UC Berkeley Catalog \u2014 DATA C102",
+                    "url": "https://graduate.catalog.berkeley.edu/courses/1583262",
+                    "source_type": "official",
+                    "retrieved_at": "2026-11-09T17:55:00.000Z",
+                    "verification_status": "verified"
+                }
+            ]
+        },
+        {
+            "course_id": "DATA C182",
+            "course_db_id": 15,
+            "course_title": "Designing, Visualizing and Understanding Deep Neural Networks",
+            "matched_reason": "Title/summary contains query term(s): design.",
+            "match_signals": [
+                {
+                    "type": "query_term_match",
+                    "detail": "Title/summary contains query term(s): design."
+                }
+            ],
+            "match_strength": "weak",
+            "facts": [
+                {
+                    "label": "Title",
+                    "value": "Designing, Visualizing and Understanding Deep Neural Networks",
+                    "verbatim": true,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1571263"
+                },
+                {
+                    "label": "Units",
+                    "value": "4",
+                    "verbatim": true,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1571263"
+                },
+                {
+                    "label": "Also known as",
+                    "value": "COMPSCI 182, CS 182, CS182, Data 182",
+                    "verbatim": false,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1571263"
+                },
+                {
+                    "label": "Summary (paraphrased)",
+                    "value": "Design and optimization of deep neural networks, visualizing their training and behavior, and the parts of deep learning theory with formal guarantees, including generative and adversarial models.",
+                    "verbatim": false,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1571263"
+                },
+                {
+                    "label": "Prerequisite (official wording)",
+                    "value": "MATH 53, MATH 54, and COMPSCI 61B | COMPSCI 70 or STAT 134",
+                    "verbatim": true,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1571263"
+                },
+                {
+                    "label": "Recommendation (official wording)",
+                    "value": "COMPSCI 189 is recommended.",
+                    "verbatim": true,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1571263"
+                },
+                {
+                    "label": "Credit restriction (official wording)",
+                    "value": "Students will receive no credit for COMPSCI 182 after completing COMPSCI W182, or COMPSCI L182.",
+                    "verbatim": true,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1571263"
+                }
+            ],
+            "sources": [
+                {
+                    "title": "UC Berkeley Catalog \u2014 DATA C182",
+                    "url": "https://undergraduate.catalog.berkeley.edu/courses/1571263",
+                    "source_type": "official",
+                    "retrieved_at": "2026-11-09T17:50:00.000Z",
+                    "verification_status": "partial"
+                }
+            ]
+        }
+    ],
+    "limitations": [
+        "Results are retrieved evidence, not academic advice. Confirm requirements with the official catalog or an advisor.",
+        "Prerequisite overlap with the student profile is not an eligibility determination (grade minimums, department rules, consent, and catalog year may apply).",
+        "No live seat availability, enrollment status, or schedule data is stored.",
+        "Course descriptions are short paraphrased summaries; prerequisite and credit-restriction text is verbatim.",
+        "Only weak keyword matches were found (a single shared word); these courses may not be relevant to the question.",
+        "COMPSCI 162: source \"Berkeley EECS department course page \u2014 COMPSCI 162\" may be outdated (not from the current catalog).",
+        "COMPSCI 61C: prerequisite AND/OR structure is uncertain; rely on the official wording.",
+        "DATA C182: prerequisite AND/OR structure is uncertain; rely on the official wording."
+    ]
+}

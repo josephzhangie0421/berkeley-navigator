@@ -62,7 +62,12 @@ export function SourceList({ sources }: { sources: Source[] }) {
               <div className="mt-0.5 flex flex-wrap items-center gap-x-2 text-xs text-muted">
                 <span className={`rounded px-1.5 py-px ${TYPE_STYLE[s.type]}`}>{SOURCE_TYPE_LABEL[s.type]}</span>
                 <span className="truncate">{hostname(s.url)}</span>
-                {s.retrieved_at && <span>Retrieved {s.retrieved_at}</span>}
+                {s.retrieved_at && <span>Retrieved {formatDate(s.retrieved_at)}</span>}
+                {s.verification_status && s.verification_status !== "verified" && (
+                  <span className="rounded bg-gold-soft px-1.5 py-px text-gold-deep">
+                    {VERIFICATION_LABEL[s.verification_status] ?? s.verification_status}
+                  </span>
+                )}
               </div>
             </div>
           </li>
@@ -70,6 +75,16 @@ export function SourceList({ sources }: { sources: Source[] }) {
       </ol>
     </section>
   );
+}
+
+const VERIFICATION_LABEL: Record<string, string> = {
+  partial: "Partly verified",
+  verified_possibly_stale: "May be outdated",
+};
+
+/** "2026-11-09T17:50:00.000Z" → "2026-11-09"; anything else is shown as given. */
+function formatDate(value: string) {
+  return /^\d{4}-\d{2}-\d{2}T/.test(value) ? value.slice(0, 10) : value;
 }
 
 function hostname(url: string) {

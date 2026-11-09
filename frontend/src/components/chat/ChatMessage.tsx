@@ -91,7 +91,7 @@ function AnswerView({ answer, onAsk, disabled }: { answer: Answer; onAsk: (q: st
       )}
       {answer.profile_explanation && (
         <Tiered tier="ai" title="How this fits your profile">
-          <p>{answer.profile_explanation}</p>
+          <p className="whitespace-pre-line">{answer.profile_explanation}</p>
         </Tiered>
       )}
       {answer.interpretation && (

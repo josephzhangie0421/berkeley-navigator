@@ -1,0 +1,637 @@
+{
+  "_comment": "Course seed. 'description' is a short paraphrased summary, not catalog wording. Every requirement.raw_text is the exact official wording as rendered (segments joined with ' | '). structured_logic is a researcher encoding of raw_text; raw_text is authoritative. relations list only course codes literally named in raw_text (normalized, e.g. 'Math 54' -> 'MATH 54', 'Data/Stat C140' -> 'DATA C140').",
+  "courses": [
+    {
+      "course_code": "COMPSCI 61A",
+      "aliases": ["CS 61A", "CS61A"],
+      "title": "The Structure and Interpretation of Computer Programs",
+      "department": "Computer Science (COMPSCI)",
+      "units": "4",
+      "description": "Introductory programming course built around abstraction: functions, recursion, data structures and objects, interpreters, several programming paradigms, and a first look at algorithm efficiency.",
+      "source_key": "cat-compsci-61a",
+      "requirements": [
+        {
+          "kind": "prerequisite",
+          "raw_text": "MATH 1A (may be taken concurrently) or Math 10A or Math 16A. Complete any | Programming experience equivalent to that gained from a score of 3 or above on the Advanced Placement Computer Science exam.",
+          "parse_status": "raw_only",
+          "render_warning": true,
+          "notes": "Catalog requirement block rendered truncated ('Complete any' with no list). How the math alternatives and the AP programming condition combine is not visible. Verify on the live catalog page.",
+          "structured_logic": null,
+          "relations": [
+            { "target": "MATH 1A", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "MATH 10A", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "MATH 16A", "relation_type": "prerequisite", "is_mandatory": true }
+          ]
+        },
+        {
+          "kind": "credit_restriction",
+          "raw_text": "Students will receive no credit for COMPSCI 61A after completing COMPSCI 47A, COMPSCI 61AS, or COMPSCI W61A.",
+          "parse_status": "parsed",
+          "relations": [
+            { "target": "COMPSCI 47A", "relation_type": "credit_restriction", "is_mandatory": false },
+            { "target": "COMPSCI 61AS", "relation_type": "credit_restriction", "is_mandatory": false },
+            { "target": "COMPSCI W61A", "relation_type": "credit_restriction", "is_mandatory": false }
+          ]
+        }
+      ]
+    },
+    {
+      "course_code": "COMPSCI 61B",
+      "aliases": ["CS 61B", "CS61B"],
+      "title": "Data Structures",
+      "department": "Computer Science (COMPSCI)",
+      "units": "4",
+      "description": "Core data structures (lists, queues, trees, arrays, hash tables), abstract data types, memory management, sorting and searching, taught in Java.",
+      "source_key": "cat-compsci-61b",
+      "requirements": [
+        {
+          "kind": "prerequisite",
+          "raw_text": "COMPSCI 61A, COMPSCI 88, or ENGIN 7.",
+          "parse_status": "parsed",
+          "render_warning": true,
+          "notes": "A 'Complete ANY of the following Courses:' heading rendered with no items; the prerequisite sentence itself is complete. COMPSCI 88 is the former name of COMPSCI/DATA C88C per the C88C catalog page.",
+          "structured_logic": { "op": "ANY", "items": [ { "course": "COMPSCI 61A" }, { "course": "COMPSCI 88" }, { "course": "ENGIN 7" } ] },
+          "relations": [
+            { "target": "COMPSCI 61A", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "COMPSCI 88", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "ENGIN 7", "relation_type": "prerequisite", "is_mandatory": true }
+          ]
+        },
+        {
+          "kind": "credit_restriction",
+          "raw_text": "Students will receive no credit for COMPSCI 61B after completing COMPSCI 61BL, or COMPSCI 47B.",
+          "parse_status": "parsed",
+          "relations": [
+            { "target": "COMPSCI 61BL", "relation_type": "credit_restriction", "is_mandatory": false },
+            { "target": "COMPSCI 47B", "relation_type": "credit_restriction", "is_mandatory": false }
+          ]
+        }
+      ]
+    },
+    {
+      "course_code": "COMPSCI 61C",
+      "aliases": ["CS 61C", "CS61C"],
+      "title": "Great Ideas of Computer Architecture (Machine Structures)",
+      "department": "Computer Science (COMPSCI)",
+      "units": "4",
+      "description": "How computers are organized internally: machine architecture, support for high-level languages, OS mechanisms (I/O, interrupts, memory management, process switching), and logic design basics.",
+      "source_key": "cat-compsci-61c",
+      "requirements": [
+        {
+          "kind": "prerequisite",
+          "raw_text": "COMPSCI 61A | COMPSCI 61B or 61BL, or programming experience equivalent to that gained in 9C, 9F, or 9G.",
+          "parse_status": "partial",
+          "render_warning": true,
+          "notes": "Rendered as two separate segments; the connector between them is not visible. '9C, 9F, 9G' are given without subject prefix (likely COMPSCI, not asserted).",
+          "structured_logic": { "op": "ALL", "logic_confidence": "uncertain", "items": [ { "course": "COMPSCI 61A" }, { "op": "ANY", "items": [ { "course": "COMPSCI 61B" }, { "course": "COMPSCI 61BL" }, { "condition": "programming experience equivalent to that gained in 9C, 9F, or 9G" } ] } ] },
+          "relations": [
+            { "target": "COMPSCI 61A", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "COMPSCI 61B", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "COMPSCI 61BL", "relation_type": "prerequisite", "is_mandatory": true }
+          ]
+        }
+      ]
+    },
+    {
+      "course_code": "COMPSCI 70",
+      "aliases": ["CS 70", "CS70"],
+      "title": "Discrete Mathematics and Probability Theory",
+      "department": "Computer Science (COMPSCI)",
+      "units": "4",
+      "description": "Logic, induction and infinity (with applications such as undecidability and stable matching), modular arithmetic and polynomials (cryptography, error-correcting codes), then discrete probability through the law of large numbers.",
+      "source_key": "cat-compsci-70",
+      "requirements": [
+        {
+          "kind": "prerequisite",
+          "raw_text": "Sophomore mathematical maturity, and programming experience equivalent to that gained in 3 | or the Advanced Placement Computer Science A course.",
+          "parse_status": "raw_only",
+          "render_warning": true,
+          "notes": "Wording appears truncated between segments ('...gained in 3' then '...or the Advanced Placement...'). No course codes are legible, so no relation edges are stored. Verify on the live catalog page.",
+          "structured_logic": null,
+          "relations": []
+        }
+      ]
+    },
+    {
+      "course_code": "COMPSCI 162",
+      "aliases": ["CS 162", "CS162"],
+      "title": "Operating Systems and System Programming",
+      "department": "Computer Science (COMPSCI)",
+      "units": "4",
+      "description": "Operating system design and system-level programming: processes, threads, synchronization, memory management, file systems, I/O, scheduling, and security.",
+      "source_key": "cat-compsci-162-dept",
+      "requirements": [
+        {
+          "kind": "prerequisite",
+          "raw_text": "COMPSCI 61B, COMPSCI 61C, and COMPSCI 70.",
+          "parse_status": "parsed",
+          "render_warning": false,
+          "notes": "From the EECS department course page (footer © 2022), not the current catalog. May be outdated.",
+          "structured_logic": { "op": "ALL", "items": [ { "course": "COMPSCI 61B" }, { "course": "COMPSCI 61C" }, { "course": "COMPSCI 70" } ] },
+          "relations": [
+            { "target": "COMPSCI 61B", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "COMPSCI 61C", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "COMPSCI 70", "relation_type": "prerequisite", "is_mandatory": true }
+          ]
+        }
+      ]
+    },
+    {
+      "course_code": "COMPSCI 170",
+      "aliases": ["CS 170", "CS170"],
+      "title": "Efficient Algorithms and Intractable Problems",
+      "department": "Computer Science (COMPSCI)",
+      "units": "4",
+      "description": "Design and analysis of efficient algorithms, lower bounds and data structures, then models of computation, NP-completeness, and intractable or unsolvable problems.",
+      "source_key": "cat-compsci-170",
+      "requirements": [
+        {
+          "kind": "prerequisite",
+          "raw_text": "COMPSCI 61B and COMPSCI 70.",
+          "parse_status": "parsed",
+          "render_warning": true,
+          "notes": "A 'Complete ALL of the following Courses:' heading rendered with no items.",
+          "structured_logic": { "op": "ALL", "items": [ { "course": "COMPSCI 61B" }, { "course": "COMPSCI 70" } ] },
+          "relations": [
+            { "target": "COMPSCI 61B", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "COMPSCI 70", "relation_type": "prerequisite", "is_mandatory": true }
+          ]
+        }
+      ]
+    },
+    {
+      "course_code": "COMPSCI 186",
+      "aliases": ["CS 186", "CS186"],
+      "title": "Introduction to Database Systems",
+      "department": "Computer Science (COMPSCI)",
+      "units": "4",
+      "description": "Data storage and access, database data models and query languages, protection and integrity, transaction processing; students build a database system as a term project.",
+      "source_key": "cat-compsci-186",
+      "requirements": [
+        {
+          "kind": "prerequisite",
+          "raw_text": "COMPSCI 61C or COMPSCI 47C | COMPSCI 47C may be taken as a co-requisite for transfer students.",
+          "parse_status": "parsed",
+          "render_warning": true,
+          "notes": "A 'Complete ANY of the following Courses:' heading rendered with no items.",
+          "structured_logic": { "op": "ANY", "items": [ { "course": "COMPSCI 61C" }, { "course": "COMPSCI 47C", "note": "may be taken as a co-requisite for transfer students" } ] },
+          "relations": [
+            { "target": "COMPSCI 61C", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "COMPSCI 47C", "relation_type": "prerequisite", "is_mandatory": true }
+          ]
+        },
+        {
+          "kind": "credit_restriction",
+          "raw_text": "Students will receive no credit for COMPSCI 186 after completing COMPSCI W186.",
+          "parse_status": "parsed",
+          "relations": [ { "target": "COMPSCI W186", "relation_type": "credit_restriction", "is_mandatory": false } ]
+        }
+      ]
+    },
+    {
+      "course_code": "COMPSCI 188",
+      "aliases": ["CS 188", "CS188"],
+      "title": "Introduction to Artificial Intelligence",
+      "department": "Computer Science (COMPSCI)",
+      "units": "4",
+      "description": "Foundations of building intelligent systems: search, game playing, reasoning under uncertainty, machine learning, robotics, and language understanding.",
+      "source_key": "cat-compsci-188",
+      "requirements": [
+        {
+          "kind": "prerequisite",
+          "raw_text": "COMPSCI 61A, COMPSCI 61B, and COMPSCI 70.",
+          "parse_status": "parsed",
+          "render_warning": false,
+          "notes": null,
+          "structured_logic": { "op": "ALL", "items": [ { "course": "COMPSCI 61A" }, { "course": "COMPSCI 61B" }, { "course": "COMPSCI 70" } ] },
+          "relations": [
+            { "target": "COMPSCI 61A", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "COMPSCI 61B", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "COMPSCI 70", "relation_type": "prerequisite", "is_mandatory": true }
+          ]
+        }
+      ]
+    },
+    {
+      "course_code": "COMPSCI 189",
+      "aliases": ["CS 189", "CS189"],
+      "title": "Introduction to Machine Learning",
+      "department": "Computer Science (COMPSCI)",
+      "units": "4",
+      "description": "Theory, algorithms and applications of machine learning: supervised regression and classification, generative and discriminative probabilistic models, Bayesian learning, clustering, time series, dimensionality reduction, with programming projects.",
+      "source_key": "cat-compsci-189",
+      "requirements": [
+        {
+          "kind": "prerequisite",
+          "raw_text": "MATH 53 and MATH 54; and COMPSCI 70 or consent of instructor.",
+          "parse_status": "parsed",
+          "render_warning": false,
+          "notes": null,
+          "structured_logic": { "op": "ALL", "items": [ { "course": "MATH 53" }, { "course": "MATH 54" }, { "op": "ANY", "items": [ { "course": "COMPSCI 70" }, { "condition": "consent of instructor" } ] } ] },
+          "relations": [
+            { "target": "MATH 53", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "MATH 54", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "COMPSCI 70", "relation_type": "prerequisite", "is_mandatory": true }
+          ]
+        }
+      ]
+    },
+    {
+      "course_code": "DATA C8",
+      "aliases": ["COMPSCI C8", "STAT C8", "INFO C8", "Data 8", "DATA 8"],
+      "title": "Foundations of Data Science",
+      "department": "Data Science (DATA)",
+      "units": "4",
+      "description": "Data analysis through statistical inference and programming on real datasets (economic, text, geographic, social network), including privacy and data-ownership issues.",
+      "source_key": "cat-data-c8",
+      "requirements": [
+        {
+          "kind": "advisory",
+          "raw_text": "This course may be taken on its own, but students are encouraged to take it concurrently | with a data science connector course (numbered 88 in a range of departments).",
+          "parse_status": "parsed",
+          "render_warning": false,
+          "notes": "No formal prerequisite. Advisory names no specific course, so no relation edges are stored.",
+          "structured_logic": null,
+          "relations": []
+        },
+        {
+          "kind": "credit_restriction",
+          "raw_text": "Students will receive no credit for DATA C8\\COMPSCI C8\\INFO C8\\STAT C8 after completing COMPSCI 8, or DATA 8.",
+          "parse_status": "parsed",
+          "relations": [
+            { "target": "COMPSCI 8", "relation_type": "credit_restriction", "is_mandatory": false }
+          ]
+        }
+      ]
+    },
+    {
+      "course_code": "DATA C88C",
+      "aliases": ["COMPSCI C88C", "COMPSCI 88", "CS 88", "Data 88C"],
+      "title": "Computational Structures in Data Science",
+      "department": "Data Science (DATA)",
+      "units": "3",
+      "description": "Follows DATA C8 by teaching the structures underlying data science programs, algorithms and languages, including functional, object-oriented and declarative programming, with larger projects.",
+      "source_key": "cat-data-c88c",
+      "requirements": [
+        {
+          "kind": "prerequisite",
+          "raw_text": "(No Prerequisite field shown on catalog page.)",
+          "parse_status": "none",
+          "render_warning": false,
+          "notes": "Absence of a field is recorded, not interpreted as 'no prerequisite'.",
+          "structured_logic": null,
+          "relations": []
+        },
+        {
+          "kind": "credit_restriction",
+          "raw_text": "Students will receive no credit for DATA C88C after completing COMPSCI 61A.",
+          "parse_status": "parsed",
+          "relations": [ { "target": "COMPSCI 61A", "relation_type": "credit_restriction", "is_mandatory": false } ]
+        }
+      ]
+    },
+    {
+      "course_code": "DATA C100",
+      "aliases": ["COMPSCI C100", "STAT C100", "Data 100", "DATA 100"],
+      "title": "Principles & Techniques of Data Science",
+      "department": "Data Science (DATA)",
+      "units": "4",
+      "description": "The full data science lifecycle: framing questions, collecting and cleaning data, visualization, statistical inference and prediction, and decision-making, using data query languages, basic machine learning methods and large-scale data tools.",
+      "source_key": "cat-data-c100",
+      "requirements": [
+        {
+          "kind": "prerequisite",
+          "raw_text": "DATA C8 or STAT 20 with a C- or better, or Pass; and COMPSCI 61A, COMPSCI/DATA C88C, or ENGIN 7 | with a C- or better, or Pass;",
+          "parse_status": "parsed",
+          "render_warning": false,
+          "notes": "Catalog page displayed the code COMPSCI C100; the credit-restriction text names DATA C100\\STAT C100\\COMPSCI C100.",
+          "structured_logic": { "op": "ALL", "grade": "C- or better, or Pass", "items": [ { "op": "ANY", "items": [ { "course": "DATA C8" }, { "course": "STAT 20" } ] }, { "op": "ANY", "items": [ { "course": "COMPSCI 61A" }, { "course": "DATA C88C" }, { "course": "ENGIN 7" } ] } ] },
+          "relations": [
+            { "target": "DATA C8", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "STAT 20", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "COMPSCI 61A", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "DATA C88C", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "ENGIN 7", "relation_type": "prerequisite", "is_mandatory": true }
+          ]
+        },
+        {
+          "kind": "corequisite",
+          "raw_text": "Corequisite: MATH 54, 56, 110, ELENG 66, PHYSICS 89 or equivalent linear algebra | (C- or better, or Pass, required if completed prior to Data C100).",
+          "parse_status": "parsed",
+          "render_warning": false,
+          "notes": null,
+          "structured_logic": { "op": "ANY", "items": [ { "course": "MATH 54" }, { "course": "MATH 56" }, { "course": "MATH 110" }, { "course": "ELENG 66" }, { "course": "PHYSICS 89" }, { "condition": "equivalent linear algebra" } ] },
+          "relations": [
+            { "target": "MATH 54", "relation_type": "corequisite", "is_mandatory": true },
+            { "target": "MATH 56", "relation_type": "corequisite", "is_mandatory": true },
+            { "target": "MATH 110", "relation_type": "corequisite", "is_mandatory": true },
+            { "target": "ELENG 66", "relation_type": "corequisite", "is_mandatory": true },
+            { "target": "PHYSICS 89", "relation_type": "corequisite", "is_mandatory": true }
+          ]
+        },
+        {
+          "kind": "credit_restriction",
+          "raw_text": "Students will receive no credit for DATA C100\\STAT C100\\COMPSCI C100 after completing DATA 100.",
+          "parse_status": "parsed",
+          "relations": []
+        }
+      ]
+    },
+    {
+      "course_code": "DATA C102",
+      "aliases": ["STAT 102", "Data 102", "DATA 102"],
+      "title": "Data, Inference, and Decisions",
+      "department": "Data Science (DATA)",
+      "units": "4",
+      "description": "Probabilistic foundations of inference and the modeling-to-decision cycle, including its social and ethical side: hypothesis testing, causal inference, experimental design, Bayesian methods, privacy, recommender systems and an introduction to machine learning.",
+      "source_key": "cat-data-c102",
+      "requirements": [
+        {
+          "kind": "prerequisite",
+          "raw_text": "Math 54 or 56 or 110 or Stat 89A or Physics 89 or both of ELENG 64 and ELENG 66 with a C- or better, or Pass; | Data/Stat/CompSci C100 with a C- or better, or Pass; and any of EECS 126, Data/Stat C140, Stat 134, | IndEng 172, Math 106 with a C- or better, or Pass. Data/Stat C140 or EECS 126 are preferred",
+          "parse_status": "parsed",
+          "render_warning": false,
+          "notes": "Three groups joined by ';' / 'and'. 'Data/Stat C140 or EECS 126 are preferred' is stored as non-mandatory recommended_background edges in addition to the mandatory alternatives.",
+          "structured_logic": { "op": "ALL", "grade": "C- or better, or Pass", "items": [ { "op": "ANY", "items": [ { "course": "MATH 54" }, { "course": "MATH 56" }, { "course": "MATH 110" }, { "course": "STAT 89A" }, { "course": "PHYSICS 89" }, { "op": "ALL", "items": [ { "course": "ELENG 64" }, { "course": "ELENG 66" } ] } ] }, { "course": "DATA C100" }, { "op": "ANY", "preferred": ["DATA C140", "EECS 126"], "items": [ { "course": "EECS 126" }, { "course": "DATA C140" }, { "course": "STAT 134" }, { "course": "INDENG 172" }, { "course": "MATH 106" } ] } ] },
+          "relations": [
+            { "target": "MATH 54", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "MATH 56", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "MATH 110", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "STAT 89A", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "PHYSICS 89", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "ELENG 64", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "ELENG 66", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "DATA C100", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "EECS 126", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "DATA C140", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "STAT 134", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "INDENG 172", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "MATH 106", "relation_type": "prerequisite", "is_mandatory": true }
+          ]
+        },
+        {
+          "kind": "recommendation",
+          "raw_text": "Data/Stat C140 or EECS 126 are preferred",
+          "parse_status": "parsed",
+          "render_warning": false,
+          "notes": "Extracted from the end of the prerequisite field.",
+          "structured_logic": { "op": "ANY", "items": [ { "course": "DATA C140" }, { "course": "EECS 126" } ] },
+          "relations": [
+            { "target": "DATA C140", "relation_type": "recommended_background", "is_mandatory": false },
+            { "target": "EECS 126", "relation_type": "recommended_background", "is_mandatory": false }
+          ]
+        }
+      ]
+    },
+    {
+      "course_code": "DATA C140",
+      "aliases": ["STAT C140", "Data 140", "DATA 140"],
+      "title": "Probability for Data Science",
+      "department": "Data Science (DATA)",
+      "units": "4",
+      "description": "Probability taught through mathematics plus programming and simulation: common distributions, bounds and approximations, Markov chains, conditioning and Bayesian methods, and basic regression and modeling.",
+      "source_key": "cat-data-c140",
+      "requirements": [
+        {
+          "kind": "prerequisite",
+          "raw_text": "DATA/COMPSCI/INFO/STAT C8, or both STAT 20 and one of COMPSCI 61A or COMPSCI/DATA C88C with C- or better, or Pass; | and one year of calculus at the level of MATH 1A-1B or MATH 51-52 or higher, with C- or better, or Pass.",
+          "parse_status": "parsed",
+          "render_warning": false,
+          "notes": "Calculus courses are named as a level ('at the level of ... or higher'), so MATH 1A/1B/51/52 edges mark a named level, not a fixed course list.",
+          "structured_logic": { "op": "ALL", "grade": "C- or better, or Pass", "items": [ { "op": "ANY", "items": [ { "course": "DATA C8" }, { "op": "ALL", "items": [ { "course": "STAT 20" }, { "op": "ANY", "items": [ { "course": "COMPSCI 61A" }, { "course": "DATA C88C" } ] } ] } ] }, { "condition": "one year of calculus at the level of MATH 1A-1B or MATH 51-52 or higher" } ] },
+          "relations": [
+            { "target": "DATA C8", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "STAT 20", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "COMPSCI 61A", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "DATA C88C", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "MATH 1A", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "MATH 1B", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "MATH 51", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "MATH 52", "relation_type": "prerequisite", "is_mandatory": true }
+          ]
+        },
+        {
+          "kind": "corequisite",
+          "raw_text": "Corequisite: MATH 54, MATH 56, ELENG 64, MATH 110 or equivalent linear algebra | (C- or better, or Pass, required if completed prior to enrollment in Data/Stat C140).",
+          "parse_status": "parsed",
+          "render_warning": false,
+          "notes": null,
+          "structured_logic": { "op": "ANY", "items": [ { "course": "MATH 54" }, { "course": "MATH 56" }, { "course": "ELENG 64" }, { "course": "MATH 110" }, { "condition": "equivalent linear algebra" } ] },
+          "relations": [
+            { "target": "MATH 54", "relation_type": "corequisite", "is_mandatory": true },
+            { "target": "MATH 56", "relation_type": "corequisite", "is_mandatory": true },
+            { "target": "ELENG 64", "relation_type": "corequisite", "is_mandatory": true },
+            { "target": "MATH 110", "relation_type": "corequisite", "is_mandatory": true }
+          ]
+        },
+        {
+          "kind": "credit_restriction",
+          "raw_text": "Students will receive no credit for STAT C140 after completing STAT 134, or EECS 126.",
+          "parse_status": "parsed",
+          "relations": [
+            { "target": "STAT 134", "relation_type": "credit_restriction", "is_mandatory": false },
+            { "target": "EECS 126", "relation_type": "credit_restriction", "is_mandatory": false }
+          ]
+        }
+      ]
+    },
+    {
+      "course_code": "DATA C182",
+      "aliases": ["COMPSCI 182", "CS 182", "CS182", "Data 182"],
+      "title": "Designing, Visualizing and Understanding Deep Neural Networks",
+      "department": "Data Science (DATA)",
+      "units": "4",
+      "description": "Design and optimization of deep neural networks, visualizing their training and behavior, and the parts of deep learning theory with formal guarantees, including generative and adversarial models.",
+      "source_key": "cat-data-c182",
+      "requirements": [
+        {
+          "kind": "prerequisite",
+          "raw_text": "MATH 53, MATH 54, and COMPSCI 61B | COMPSCI 70 or STAT 134",
+          "parse_status": "partial",
+          "render_warning": true,
+          "notes": "Segments sat under 'Complete ALL of the following Courses:' headings; an extra empty ALL heading also rendered. Treat combined logic as uncertain. Formerly COMPSCI 182.",
+          "structured_logic": { "op": "ALL", "logic_confidence": "uncertain", "items": [ { "course": "MATH 53" }, { "course": "MATH 54" }, { "course": "COMPSCI 61B" }, { "op": "ANY", "items": [ { "course": "COMPSCI 70" }, { "course": "STAT 134" } ] } ] },
+          "relations": [
+            { "target": "MATH 53", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "MATH 54", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "COMPSCI 61B", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "COMPSCI 70", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "STAT 134", "relation_type": "prerequisite", "is_mandatory": true }
+          ]
+        },
+        {
+          "kind": "recommendation",
+          "raw_text": "COMPSCI 189 is recommended.",
+          "parse_status": "parsed",
+          "render_warning": true,
+          "notes": "Rendered under a 'Complete ANY of the following Courses:' heading; wording says 'recommended', stored as non-mandatory.",
+          "structured_logic": { "op": "ANY", "items": [ { "course": "COMPSCI 189" } ] },
+          "relations": [ { "target": "COMPSCI 189", "relation_type": "recommended_background", "is_mandatory": false } ]
+        },
+        {
+          "kind": "credit_restriction",
+          "raw_text": "Students will receive no credit for COMPSCI 182 after completing COMPSCI W182, or COMPSCI L182.",
+          "parse_status": "parsed",
+          "relations": [
+            { "target": "COMPSCI W182", "relation_type": "credit_restriction", "is_mandatory": false },
+            { "target": "COMPSCI L182", "relation_type": "credit_restriction", "is_mandatory": false }
+          ]
+        }
+      ]
+    },
+    {
+      "course_code": "EECS 126",
+      "aliases": ["EE 126", "ELENG 126"],
+      "title": "Probability and Random Processes",
+      "department": "Electrical Engineering and Computer Sciences (EECS)",
+      "units": "4",
+      "description": "Probability and random processes with applications in networking, communications, signal processing and control: random variables and distributions, limit theorems, estimation and detection, Markov chains.",
+      "source_key": "cat-eecs-126",
+      "requirements": [
+        {
+          "kind": "prerequisite",
+          "raw_text": "COMPSCI 70 preferred but not required. | Familiarity with linear algebra.",
+          "parse_status": "partial",
+          "render_warning": true,
+          "notes": "'Familiarity with linear algebra.' rendered under a 'Complete ALL of the following Courses:' heading. COMPSCI 70 is explicitly not required, so it is stored as recommended_background only.",
+          "structured_logic": { "op": "ALL", "logic_confidence": "uncertain", "items": [ { "condition": "Familiarity with linear algebra." } ], "preferred": ["COMPSCI 70"] },
+          "relations": [ { "target": "COMPSCI 70", "relation_type": "recommended_background", "is_mandatory": false } ]
+        }
+      ]
+    },
+    {
+      "course_code": "EECS 127",
+      "aliases": ["EE 127"],
+      "title": "Optimization Models in Engineering",
+      "department": "Electrical Engineering and Computer Sciences (EECS)",
+      "units": "4",
+      "description": "Optimization models and their use in machine learning, statistics, decision-making and control, focusing on efficiently solvable problems such as linear and constrained least squares.",
+      "source_key": "cat-eecs-127",
+      "requirements": [
+        {
+          "kind": "prerequisite",
+          "raw_text": "ELENG 64 and ELENG 66, or consent of instructor.",
+          "parse_status": "parsed",
+          "render_warning": true,
+          "notes": "A 'Complete ALL of the following Courses:' heading rendered with no items.",
+          "structured_logic": { "op": "ANY", "items": [ { "op": "ALL", "items": [ { "course": "ELENG 64" }, { "course": "ELENG 66" } ] }, { "condition": "consent of instructor" } ] },
+          "relations": [
+            { "target": "ELENG 64", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "ELENG 66", "relation_type": "prerequisite", "is_mandatory": true }
+          ]
+        }
+      ]
+    },
+    {
+      "course_code": "MATH 53",
+      "aliases": ["Math 53"],
+      "title": "Multivariable Calculus",
+      "department": "Mathematics (MATH)",
+      "units": "4",
+      "description": "Parametric and polar curves, vectors in two and three dimensions, partial derivatives, multiple integrals, vector calculus and the theorems of Green, Gauss and Stokes.",
+      "source_key": "cat-math-53",
+      "requirements": [
+        {
+          "kind": "prerequisite",
+          "raw_text": "MATH 52 | Previously offered as 1B or N1B",
+          "parse_status": "parsed",
+          "render_warning": true,
+          "notes": "A 'Complete ALL of the following Courses:' heading rendered with no items. 'Previously offered as 1B or N1B' appears to describe MATH 52 (not asserted).",
+          "structured_logic": { "op": "ALL", "items": [ { "course": "MATH 52" } ] },
+          "relations": [ { "target": "MATH 52", "relation_type": "prerequisite", "is_mandatory": true } ]
+        }
+      ]
+    },
+    {
+      "course_code": "MATH 54",
+      "aliases": ["Math 54"],
+      "title": "Linear Algebra and Differential Equations",
+      "department": "Mathematics (MATH)",
+      "units": "4",
+      "description": "Matrices and determinants, vector and inner-product spaces, eigenvalues and eigenvectors, linear second-order differential equations, first-order constant-coefficient systems, and Fourier series.",
+      "source_key": "cat-math-54",
+      "requirements": [
+        {
+          "kind": "prerequisite",
+          "raw_text": "Mathematics 52 (previously 1B or N1B), 10B, or N10B.",
+          "parse_status": "parsed",
+          "render_warning": false,
+          "notes": null,
+          "structured_logic": { "op": "ANY", "items": [ { "course": "MATH 52" }, { "course": "MATH 10B" }, { "course": "MATH N10B" } ] },
+          "relations": [
+            { "target": "MATH 52", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "MATH 10B", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "MATH N10B", "relation_type": "prerequisite", "is_mandatory": true }
+          ]
+        },
+        {
+          "kind": "credit_restriction",
+          "raw_text": "Students will receive no credit for MATH 54 after completing MATH H54, MATH N54, MATH W54, or MATH 56.",
+          "parse_status": "parsed",
+          "relations": [
+            { "target": "MATH H54", "relation_type": "credit_restriction", "is_mandatory": false },
+            { "target": "MATH N54", "relation_type": "credit_restriction", "is_mandatory": false },
+            { "target": "MATH W54", "relation_type": "credit_restriction", "is_mandatory": false },
+            { "target": "MATH 56", "relation_type": "credit_restriction", "is_mandatory": false }
+          ]
+        }
+      ]
+    },
+    {
+      "course_code": "STAT 134",
+      "aliases": ["Stat 134"],
+      "title": "Concepts of Probability",
+      "department": "Statistics (STAT)",
+      "units": "4",
+      "description": "Introductory probability emphasizing concepts and applications: conditional expectation, independence, laws of large numbers, discrete and continuous random variables, the central limit theorem, and selected topics such as Poisson processes and Markov chains.",
+      "source_key": "cat-stat-134",
+      "requirements": [
+        {
+          "kind": "prerequisite",
+          "raw_text": "One year of calculus.",
+          "parse_status": "parsed",
+          "render_warning": false,
+          "notes": "No specific course named, so no relation edges are stored.",
+          "structured_logic": { "op": "ALL", "items": [ { "condition": "One year of calculus." } ] },
+          "relations": []
+        }
+      ]
+    },
+    {
+      "course_code": "STAT 135",
+      "aliases": ["Stat 135"],
+      "title": "Concepts of Statistics",
+      "department": "Statistics (STAT)",
+      "units": "4",
+      "description": "Survey of statistical theory and methods (descriptive statistics, maximum likelihood, nonparametric and goodness-of-fit tests, ANOVA, bootstrap, least squares) with a lab applying them to scientific and engineering data.",
+      "source_key": "cat-stat-135",
+      "requirements": [
+        {
+          "kind": "prerequisite",
+          "raw_text": "STAT 134 or STAT 140; and MATH 54, EL ENG 16A, STAT 89A, MATH 110 or equivalent linear algebra.",
+          "parse_status": "parsed",
+          "render_warning": false,
+          "notes": "'STAT 140' is written as-is; it is not mapped to DATA C140 because the source does not state they are the same course.",
+          "structured_logic": { "op": "ALL", "items": [ { "op": "ANY", "items": [ { "course": "STAT 134" }, { "course": "STAT 140" } ] }, { "op": "ANY", "items": [ { "course": "MATH 54" }, { "course": "ELENG 16A" }, { "course": "STAT 89A" }, { "course": "MATH 110" }, { "condition": "equivalent linear algebra" } ] } ] },
+          "relations": [
+            { "target": "STAT 134", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "STAT 140", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "MATH 54", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "ELENG 16A", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "STAT 89A", "relation_type": "prerequisite", "is_mandatory": true },
+            { "target": "MATH 110", "relation_type": "prerequisite", "is_mandatory": true }
+          ]
+        },
+        {
+          "kind": "corequisite",
+          "raw_text": "Strongly recommended corerequisite: STAT 133.",
+          "parse_status": "parsed",
+          "render_warning": false,
+          "notes": "Spelling 'corerequisite' preserved from source. Recommended, not mandatory.",
+          "structured_logic": { "op": "ANY", "items": [ { "course": "STAT 133" } ] },
+          "relations": [ { "target": "STAT 133", "relation_type": "corequisite", "is_mandatory": false } ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,334 @@
+{
+    "results": [
+        {
+            "course_id": "COMPSCI 189",
+            "course_db_id": 9,
+            "course_title": "Introduction to Machine Learning",
+            "matched_reason": "COMPSCI 189 is named in the query. Official prerequisite text names MATH 53, listed as completed in the student profile.",
+            "match_signals": [
+                {
+                    "type": "named_in_query",
+                    "detail": "COMPSCI 189 is named in the query."
+                },
+                {
+                    "type": "prerequisite_names_profile_course",
+                    "detail": "Official prerequisite text names MATH 53, listed as completed in the student profile."
+                }
+            ],
+            "match_strength": "strong",
+            "facts": [
+                {
+                    "label": "Title",
+                    "value": "Introduction to Machine Learning",
+                    "verbatim": true,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1042881"
+                },
+                {
+                    "label": "Units",
+                    "value": "4",
+                    "verbatim": true,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1042881"
+                },
+                {
+                    "label": "Also known as",
+                    "value": "CS 189, CS189",
+                    "verbatim": false,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1042881"
+                },
+                {
+                    "label": "Summary (paraphrased)",
+                    "value": "Theory, algorithms and applications of machine learning: supervised regression and classification, generative and discriminative probabilistic models, Bayesian learning, clustering, time series, dimensionality reduction, with programming projects.",
+                    "verbatim": false,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1042881"
+                },
+                {
+                    "label": "Prerequisite (official wording)",
+                    "value": "MATH 53 and MATH 54; and COMPSCI 70 or consent of instructor.",
+                    "verbatim": true,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1042881"
+                },
+                {
+                    "label": "Profile overlap with courses named in prerequisite text (not an eligibility check)",
+                    "value": "Listed as completed: MATH 53. Not listed: MATH 54, COMPSCI 70. Many named courses are alternatives (OR); see official wording.",
+                    "verbatim": false,
+                    "derived": true,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1042881"
+                }
+            ],
+            "sources": [
+                {
+                    "title": "UC Berkeley Catalog \u2014 COMPSCI 189",
+                    "url": "https://undergraduate.catalog.berkeley.edu/courses/1042881",
+                    "source_type": "official",
+                    "retrieved_at": "2026-11-09T17:50:00.000Z",
+                    "verification_status": "verified"
+                }
+            ]
+        },
+        {
+            "course_id": "COMPSCI 188",
+            "course_db_id": 8,
+            "course_title": "Introduction to Artificial Intelligence",
+            "matched_reason": "Official prerequisite text names COMPSCI 61A, COMPSCI 61B, listed as completed in the student profile.",
+            "match_signals": [
+                {
+                    "type": "prerequisite_names_profile_course",
+                    "detail": "Official prerequisite text names COMPSCI 61A, COMPSCI 61B, listed as completed in the student profile."
+                }
+            ],
+            "match_strength": "strong",
+            "facts": [
+                {
+                    "label": "Title",
+                    "value": "Introduction to Artificial Intelligence",
+                    "verbatim": true,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1042871"
+                },
+                {
+                    "label": "Units",
+                    "value": "4",
+                    "verbatim": true,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1042871"
+                },
+                {
+                    "label": "Also known as",
+                    "value": "CS 188, CS188",
+                    "verbatim": false,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1042871"
+                },
+                {
+                    "label": "Summary (paraphrased)",
+                    "value": "Foundations of building intelligent systems: search, game playing, reasoning under uncertainty, machine learning, robotics, and language understanding.",
+                    "verbatim": false,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1042871"
+                },
+                {
+                    "label": "Prerequisite (official wording)",
+                    "value": "COMPSCI 61A, COMPSCI 61B, and COMPSCI 70.",
+                    "verbatim": true,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1042871"
+                },
+                {
+                    "label": "Profile overlap with courses named in prerequisite text (not an eligibility check)",
+                    "value": "Listed as completed: COMPSCI 61A, COMPSCI 61B. Not listed: COMPSCI 70. Many named courses are alternatives (OR); see official wording.",
+                    "verbatim": false,
+                    "derived": true,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1042871"
+                }
+            ],
+            "sources": [
+                {
+                    "title": "UC Berkeley Catalog \u2014 COMPSCI 188",
+                    "url": "https://undergraduate.catalog.berkeley.edu/courses/1042871",
+                    "source_type": "official",
+                    "retrieved_at": "2026-11-09T17:50:00.000Z",
+                    "verification_status": "verified"
+                }
+            ]
+        },
+        {
+            "course_id": "COMPSCI 61C",
+            "course_db_id": 3,
+            "course_title": "Great Ideas of Computer Architecture (Machine Structures)",
+            "matched_reason": "Official prerequisite text names COMPSCI 61A, COMPSCI 61B, listed as completed in the student profile.",
+            "match_signals": [
+                {
+                    "type": "prerequisite_names_profile_course",
+                    "detail": "Official prerequisite text names COMPSCI 61A, COMPSCI 61B, listed as completed in the student profile."
+                }
+            ],
+            "match_strength": "strong",
+            "facts": [
+                {
+                    "label": "Title",
+                    "value": "Great Ideas of Computer Architecture (Machine Structures)",
+                    "verbatim": true,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1044281"
+                },
+                {
+                    "label": "Units",
+                    "value": "4",
+                    "verbatim": true,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1044281"
+                },
+                {
+                    "label": "Also known as",
+                    "value": "CS 61C, CS61C",
+                    "verbatim": false,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1044281"
+                },
+                {
+                    "label": "Summary (paraphrased)",
+                    "value": "How computers are organized internally: machine architecture, support for high-level languages, OS mechanisms (I/O, interrupts, memory management, process switching), and logic design basics.",
+                    "verbatim": false,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1044281"
+                },
+                {
+                    "label": "Prerequisite (official wording)",
+                    "value": "COMPSCI 61A | COMPSCI 61B or 61BL, or programming experience equivalent to that gained in 9C, 9F, or 9G.",
+                    "verbatim": true,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1044281"
+                },
+                {
+                    "label": "Profile overlap with courses named in prerequisite text (not an eligibility check)",
+                    "value": "Listed as completed: COMPSCI 61A, COMPSCI 61B. Not listed: COMPSCI 61BL. Many named courses are alternatives (OR); see official wording.",
+                    "verbatim": false,
+                    "derived": true,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1044281"
+                }
+            ],
+            "sources": [
+                {
+                    "title": "UC Berkeley Catalog \u2014 COMPSCI 61C",
+                    "url": "https://undergraduate.catalog.berkeley.edu/courses/1044281",
+                    "source_type": "official",
+                    "retrieved_at": "2026-11-09T17:50:00.000Z",
+                    "verification_status": "partial"
+                }
+            ]
+        },
+        {
+            "course_id": "DATA C182",
+            "course_db_id": 15,
+            "course_title": "Designing, Visualizing and Understanding Deep Neural Networks",
+            "matched_reason": "Official prerequisite text names MATH 53, COMPSCI 61B, listed as completed in the student profile.",
+            "match_signals": [
+                {
+                    "type": "prerequisite_names_profile_course",
+                    "detail": "Official prerequisite text names MATH 53, COMPSCI 61B, listed as completed in the student profile."
+                }
+            ],
+            "match_strength": "strong",
+            "facts": [
+                {
+                    "label": "Title",
+                    "value": "Designing, Visualizing and Understanding Deep Neural Networks",
+                    "verbatim": true,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1571263"
+                },
+                {
+                    "label": "Units",
+                    "value": "4",
+                    "verbatim": true,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1571263"
+                },
+                {
+                    "label": "Also known as",
+                    "value": "COMPSCI 182, CS 182, CS182, Data 182",
+                    "verbatim": false,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1571263"
+                },
+                {
+                    "label": "Summary (paraphrased)",
+                    "value": "Design and optimization of deep neural networks, visualizing their training and behavior, and the parts of deep learning theory with formal guarantees, including generative and adversarial models.",
+                    "verbatim": false,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1571263"
+                },
+                {
+                    "label": "Prerequisite (official wording)",
+                    "value": "MATH 53, MATH 54, and COMPSCI 61B | COMPSCI 70 or STAT 134",
+                    "verbatim": true,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1571263"
+                },
+                {
+                    "label": "Recommendation (official wording)",
+                    "value": "COMPSCI 189 is recommended.",
+                    "verbatim": true,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1571263"
+                },
+                {
+                    "label": "Credit restriction (official wording)",
+                    "value": "Students will receive no credit for COMPSCI 182 after completing COMPSCI W182, or COMPSCI L182.",
+                    "verbatim": true,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1571263"
+                },
+                {
+                    "label": "Profile overlap with courses named in prerequisite text (not an eligibility check)",
+                    "value": "Listed as completed: MATH 53, COMPSCI 61B. Not listed: MATH 54, COMPSCI 70, STAT 134. Many named courses are alternatives (OR); see official wording.",
+                    "verbatim": false,
+                    "derived": true,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1571263"
+                }
+            ],
+            "sources": [
+                {
+                    "title": "UC Berkeley Catalog \u2014 DATA C182",
+                    "url": "https://undergraduate.catalog.berkeley.edu/courses/1571263",
+                    "source_type": "official",
+                    "retrieved_at": "2026-11-09T17:50:00.000Z",
+                    "verification_status": "partial"
+                }
+            ]
+        },
+        {
+            "course_id": "COMPSCI 162",
+            "course_db_id": 5,
+            "course_title": "Operating Systems and System Programming",
+            "matched_reason": "Official prerequisite text names COMPSCI 61B, listed as completed in the student profile.",
+            "match_signals": [
+                {
+                    "type": "prerequisite_names_profile_course",
+                    "detail": "Official prerequisite text names COMPSCI 61B, listed as completed in the student profile."
+                }
+            ],
+            "match_strength": "strong",
+            "facts": [
+                {
+                    "label": "Title",
+                    "value": "Operating Systems and System Programming",
+                    "verbatim": true,
+                    "source_url": "https://www2.eecs.berkeley.edu/Courses/COMPSCI162/index.html"
+                },
+                {
+                    "label": "Units",
+                    "value": "4",
+                    "verbatim": true,
+                    "source_url": "https://www2.eecs.berkeley.edu/Courses/COMPSCI162/index.html"
+                },
+                {
+                    "label": "Also known as",
+                    "value": "CS 162, CS162",
+                    "verbatim": false,
+                    "source_url": "https://www2.eecs.berkeley.edu/Courses/COMPSCI162/index.html"
+                },
+                {
+                    "label": "Summary (paraphrased)",
+                    "value": "Operating system design and system-level programming: processes, threads, synchronization, memory management, file systems, I/O, scheduling, and security.",
+                    "verbatim": false,
+                    "source_url": "https://www2.eecs.berkeley.edu/Courses/COMPSCI162/index.html"
+                },
+                {
+                    "label": "Prerequisite (official wording)",
+                    "value": "COMPSCI 61B, COMPSCI 61C, and COMPSCI 70.",
+                    "verbatim": true,
+                    "source_url": "https://www2.eecs.berkeley.edu/Courses/COMPSCI162/index.html"
+                },
+                {
+                    "label": "Profile overlap with courses named in prerequisite text (not an eligibility check)",
+                    "value": "Listed as completed: COMPSCI 61B. Not listed: COMPSCI 61C, COMPSCI 70. Many named courses are alternatives (OR); see official wording.",
+                    "verbatim": false,
+                    "derived": true,
+                    "source_url": "https://www2.eecs.berkeley.edu/Courses/COMPSCI162/index.html"
+                }
+            ],
+            "sources": [
+                {
+                    "title": "Berkeley EECS department course page \u2014 COMPSCI 162",
+                    "url": "https://www2.eecs.berkeley.edu/Courses/COMPSCI162/index.html",
+                    "source_type": "official",
+                    "retrieved_at": "2026-11-09T17:58:00.000Z",
+                    "verification_status": "verified_possibly_stale"
+                }
+            ]
+        }
+    ],
+    "limitations": [
+        "Results are retrieved evidence, not academic advice. Confirm requirements with the official catalog or an advisor.",
+        "Prerequisite overlap with the student profile is not an eligibility determination (grade minimums, department rules, consent, and catalog year may apply).",
+        "No live seat availability, enrollment status, or schedule data is stored.",
+        "Course descriptions are short paraphrased summaries; prerequisite and credit-restriction text is verbatim.",
+        "COMPSCI 61C: prerequisite AND/OR structure is uncertain; rely on the official wording.",
+        "DATA C182: prerequisite AND/OR structure is uncertain; rely on the official wording.",
+        "COMPSCI 162: source \"Berkeley EECS department course page \u2014 COMPSCI 162\" may be outdated (not from the current catalog)."
+    ]
+}

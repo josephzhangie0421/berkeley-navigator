@@ -34,9 +34,16 @@ function isHttpUrl(value: string | undefined): value is string {
   }
 }
 
-function factText(f: RawFact): string {
+/** Raw value of a fact, from the KB shape ({label, value}) or the older loose shapes. */
+function factValue(f: RawFact): string {
   if (typeof f === "string") return f.trim();
-  return (f.text ?? f.fact ?? f.content ?? "").trim();
+  return (f.value ?? f.text ?? f.fact ?? f.content ?? "").trim();
+}
+
+/** "Label: value", quoting exact official wording so it reads as a quotation. */
+function factDisplay(label: string | undefined, value: string, verbatim: boolean): string {
+  if (!label) return value;
+  return verbatim && !/^(Title|Units)$/.test(label) ? `${label}: \u201C${value}\u201D` : `${label}: ${value}`;
 }
 
 /**
@@ -45,9 +52,14 @@ function factText(f: RawFact): string {
  * - Sources are de-duplicated by URL and re-labelled S1, S2, … so the
  *   answer generator and UI share a single citation namespace.
  * - Sources without a valid http(s) URL are dropped (they can't be opened).
- * - A fact keeps a source link only when the backend gave one explicitly,
+ * - A fact keeps a source link only when the backend gave one explicitly
+ *   (KB backend: `source_url`; older shapes: source_id / source_index),
  *   or when its course has exactly one source. Otherwise the fact has no
  *   citation and is shown as unverified.
+ * - Every fact gets an evidence-wide id (F1, F2, …) so generated claims can
+ *   cite the specific fact that supports them.
+ * - `verbatim` and `derived` flags are preserved: derived facts (profile
+ *   overlap computed by the backend) are never presented as official text.
  */
 export function normalizeRetrieveResponse(raw: RetrieveResponse): RetrievalEvidence {
   const sources: Source[] = [];
@@ -55,21 +67,24 @@ export function normalizeRetrieveResponse(raw: RetrieveResponse): RetrievalEvide
 
   const registerSource = (s: RawSource): Source | null => {
     const obj = typeof s === "string" ? { url: s } : s;
-    if (!isHttpUrl(obj.url)) return null;
-    const existing = byUrl.get(obj.url);
+    const url = obj.url ?? undefined;
+    if (!isHttpUrl(url)) return null;
+    const existing = byUrl.get(url);
     if (existing) return existing;
     const src: Source = {
       id: `S${sources.length + 1}`,
-      title: (obj.title ?? obj.name ?? obj.url).trim(),
-      url: obj.url,
+      title: (obj.title ?? obj.name ?? url).trim(),
+      url,
       type: classifySourceType(obj.type ?? obj.source_type),
-      retrieved_at: obj.retrieved_at ?? obj.last_updated,
+      retrieved_at: obj.retrieved_at ?? obj.last_updated ?? undefined,
+      verification_status: obj.verification_status,
     };
     sources.push(src);
-    byUrl.set(obj.url, src);
+    byUrl.set(url, src);
     return src;
   };
 
+  let factCounter = 0;
   const courses = (Array.isArray(raw.results) ? raw.results : [])
     .filter((r) => r && typeof r.course_id === "string")
     .map((r) => {
@@ -89,19 +104,35 @@ export function normalizeRetrieveResponse(raw: RetrieveResponse): RetrievalEvide
 
       const facts: Fact[] = (Array.isArray(r.facts) ? r.facts : [])
         .map((f): Fact | null => {
-          const text = factText(f);
-          if (!text) return null;
+          const value = factValue(f);
+          if (!value) return null;
           let ids: string[] = [];
-          if (typeof f !== "string") {
-            const refs = [...(f.source_ids ?? []), ...(f.source_id ? [f.source_id] : [])];
-            ids = refs.map((ref) => localIdMap.get(ref)).filter((x): x is string => !!x);
-            if (typeof f.source_index === "number") {
-              const byIdx = localByIndex[f.source_index];
+          const obj = typeof f === "string" ? undefined : f;
+          if (obj) {
+            // KB backend links each fact to its source by URL.
+            if (obj.source_url) {
+              const reg = byUrl.get(obj.source_url) ?? registerSource({ url: obj.source_url });
+              if (reg) ids.push(reg.id);
+            }
+            const refs = [...(obj.source_ids ?? []), ...(obj.source_id ? [obj.source_id] : [])];
+            ids.push(...refs.map((ref) => localIdMap.get(ref)).filter((x): x is string => !!x));
+            if (typeof obj.source_index === "number") {
+              const byIdx = localByIndex[obj.source_index];
               if (byIdx) ids.push(byIdx);
             }
           }
           if (ids.length === 0 && courseSourceIds.length === 1) ids = [courseSourceIds[0]];
-          return { text, source_ids: [...new Set(ids)] };
+          const verbatim = obj?.verbatim === true;
+          return {
+            id: `F${++factCounter}`,
+            course_id: r.course_id,
+            text: factDisplay(obj?.label, value, verbatim),
+            label: obj?.label,
+            value,
+            verbatim,
+            derived: obj?.derived === true,
+            source_ids: [...new Set(ids)],
+          };
         })
         .filter((x): x is Fact => !!x);
 
@@ -109,6 +140,7 @@ export function normalizeRetrieveResponse(raw: RetrieveResponse): RetrievalEvide
         course_id: r.course_id,
         course_title: r.course_title ?? r.course_id,
         matched_reason: r.matched_reason,
+        match_strength: r.match_strength === "weak" ? ("weak" as const) : ("strong" as const),
         facts,
         source_ids: courseSourceIds,
       };

@@ -11,6 +11,8 @@ export interface Claim {
   text: string;
   /** Must reference ids present in `Answer.sources`. Validated server-side. */
   source_ids: string[];
+  /** Retrieved fact ids (F1, F2, …) that support this claim. Source ids are derived from these. */
+  fact_ids?: string[];
 }
 
 export interface CourseOption {

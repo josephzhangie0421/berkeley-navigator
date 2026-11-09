@@ -1,0 +1,118 @@
+{
+    "results": [
+        {
+            "course_id": "COMPSCI 170",
+            "course_db_id": 6,
+            "course_title": "Efficient Algorithms and Intractable Problems",
+            "matched_reason": "COMPSCI 170 is named in the query.",
+            "match_signals": [
+                {
+                    "type": "named_in_query",
+                    "detail": "COMPSCI 170 is named in the query."
+                }
+            ],
+            "match_strength": "strong",
+            "facts": [
+                {
+                    "label": "Title",
+                    "value": "Efficient Algorithms and Intractable Problems",
+                    "verbatim": true,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1042811"
+                },
+                {
+                    "label": "Units",
+                    "value": "4",
+                    "verbatim": true,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1042811"
+                },
+                {
+                    "label": "Also known as",
+                    "value": "CS 170, CS170",
+                    "verbatim": false,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1042811"
+                },
+                {
+                    "label": "Summary (paraphrased)",
+                    "value": "Design and analysis of efficient algorithms, lower bounds and data structures, then models of computation, NP-completeness, and intractable or unsolvable problems.",
+                    "verbatim": false,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1042811"
+                },
+                {
+                    "label": "Prerequisite (official wording)",
+                    "value": "COMPSCI 61B and COMPSCI 70.",
+                    "verbatim": true,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1042811"
+                }
+            ],
+            "sources": [
+                {
+                    "title": "UC Berkeley Catalog \u2014 COMPSCI 170",
+                    "url": "https://undergraduate.catalog.berkeley.edu/courses/1042811",
+                    "source_type": "official",
+                    "retrieved_at": "2026-11-09T17:50:00.000Z",
+                    "verification_status": "verified"
+                }
+            ]
+        },
+        {
+            "course_id": "COMPSCI 189",
+            "course_db_id": 9,
+            "course_title": "Introduction to Machine Learning",
+            "matched_reason": "COMPSCI 189 is named in the query.",
+            "match_signals": [
+                {
+                    "type": "named_in_query",
+                    "detail": "COMPSCI 189 is named in the query."
+                }
+            ],
+            "match_strength": "strong",
+            "facts": [
+                {
+                    "label": "Title",
+                    "value": "Introduction to Machine Learning",
+                    "verbatim": true,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1042881"
+                },
+                {
+                    "label": "Units",
+                    "value": "4",
+                    "verbatim": true,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1042881"
+                },
+                {
+                    "label": "Also known as",
+                    "value": "CS 189, CS189",
+                    "verbatim": false,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1042881"
+                },
+                {
+                    "label": "Summary (paraphrased)",
+                    "value": "Theory, algorithms and applications of machine learning: supervised regression and classification, generative and discriminative probabilistic models, Bayesian learning, clustering, time series, dimensionality reduction, with programming projects.",
+                    "verbatim": false,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1042881"
+                },
+                {
+                    "label": "Prerequisite (official wording)",
+                    "value": "MATH 53 and MATH 54; and COMPSCI 70 or consent of instructor.",
+                    "verbatim": true,
+                    "source_url": "https://undergraduate.catalog.berkeley.edu/courses/1042881"
+                }
+            ],
+            "sources": [
+                {
+                    "title": "UC Berkeley Catalog \u2014 COMPSCI 189",
+                    "url": "https://undergraduate.catalog.berkeley.edu/courses/1042881",
+                    "source_type": "official",
+                    "retrieved_at": "2026-11-09T17:50:00.000Z",
+                    "verification_status": "verified"
+                }
+            ]
+        }
+    ],
+    "limitations": [
+        "Results are retrieved evidence, not academic advice. Confirm requirements with the official catalog or an advisor.",
+        "Prerequisite overlap with the student profile is not an eligibility determination (grade minimums, department rules, consent, and catalog year may apply).",
+        "No live seat availability, enrollment status, or schedule data is stored.",
+        "Course descriptions are short paraphrased summaries; prerequisite and credit-restriction text is verbatim."
+    ]
+}
