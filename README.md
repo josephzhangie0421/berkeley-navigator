@@ -1,146 +1,121 @@
 # Berkeley Navigator
 
-A course exploration copilot prototype for UC Berkeley undergraduates. A student enters a short academic
-profile, asks a course question in a chat, and gets an answer built only from retrieved Berkeley course
-information, with source links and clear statements of what is not known.
+An evidence-first course explorer for UC Berkeley. The active MVP uses vanilla HTML/CSS/ES Modules, Python FastAPI/Pydantic, PostgreSQL SQL + full-text search, and native Gemini Function Calling through Google's Python SDK. No Node backend, agent framework, or vector database is used.
 
-**Independent student project. Not affiliated with or endorsed by UC Berkeley.**
+The previous Next.js/Express implementation, its original data and tests are preserved in `legacy/`. It is not part of the active application or deployment.
 
-Status: v0.1 MVP for moderated user testing. Not a production deployment.
+## What works
 
-## What it does
+- Exact code/alias, title, and topic search over reviewed, published catalog versions.
+- Course cards, original requirement text, official source links and evidence timestamps.
+- Independent AND/OR/nested prerequisite evaluation with `satisfied`, `not_satisfied`, and `unknown` outcomes and explanations.
+- Session-only profile and multi-turn conversation; nothing is saved in localStorage, cookies, or a student database.
+- Gemini's four read-only tools: `get_course`, `search_courses`, `check_prerequisites`, `get_evidence`.
+- Bounded native tool calling, validated arguments, timeouts, and real SQL fallback when Gemini is unavailable.
+- Staging, review and explicit transactional publication; immutable published versions and source evidence.
 
-- Editable student profile (year, majors, completed courses, interests, constraints), stored only in the browser.
-- Multi-turn chat with starter questions, follow-ups, loading and error states.
-- Answers grounded in a verified knowledge base of 21 CS / Data Science / Math / Stat courses:
-  official prerequisite wording kept verbatim, every fact linked to its catalog source with a retrieval date.
-- Separates official information, computed profile overlap, and AI interpretation; never claims eligibility,
-  seat availability, or enrollment probability.
-- Says so when the knowledge base has no evidence (unknown course, uncovered topic such as HCI).
-- Per-message feedback (kept in the page only).
+**Data status:** the 21 preserved course records are validated *candidates*, not automatically approved facts. The catalog is intentionally empty until a human reviews and publishes records. The `2026-2027` candidate year is an import assumption requiring review. Synthetic records are used only in isolated tests. No live seats, enrollment guarantees, grade inference, or degree audit is implemented.
 
-Out of scope for v0.1: CalNet login, Degree Progress parsing, four-year planner, enrollment prediction,
-live seat data, Gmail/advisor connectors, university-wide coverage.
+## Local setup
 
-## Repository layout
+Python 3.14 and PostgreSQL 17 were used for validation. Use a dedicated local/development database. Cloud credentials are optional for starting the server, but PostgreSQL is required for course retrieval.
 
-```
-berkeley-navigator/
-├── backend/    Course knowledge base + retrieval API (TypeScript, Express, PostgreSQL/PGlite)
-│   ├── database/        schema.sql, seed/courses.json, seed/sources.json
-│   ├── src/             db/, repo.ts, retrieve.ts, api/
-│   ├── tests/           Vitest: seed quality + API
-│   └── docs/            api_contract.md, data_dictionary.md, sources.md, coverage_report.md
-├── frontend/   Chat UI + answer generation (Next.js 16, React 19, Tailwind 4)
-│   ├── src/app/api/chat/route.ts         server: retrieval → generation
-│   ├── src/lib/api/                      typed retrieval client + response normalizer
-│   ├── src/lib/server/generation/        llm.ts, evidenceOnly.ts, validate.ts, grounding.ts
-│   ├── tests/                            Vitest: contract, grounding, generation (real KB fixtures)
-│   └── scripts/e2e-chat.mjs              end-to-end scenario check against running servers
-└── docs/       Integration report and end-to-end transcript
+```sh
+python3 -m venv .venv
+.venv/bin/pip install -r backend/requirements-dev.lock
+.venv/bin/python scripts/configure_local.py
 ```
 
-## Architecture
+The configuration helper prompts privately for a PostgreSQL URI and Gemini API key, writes root `.env` with mode `0600`, and refuses to overwrite an existing file. Do not paste secrets into chat or put them in shell command arguments. `.env.example` documents every setting. The backend reads root `.env`; run commands from the repository root.
 
-```
-Browser (Chat UI)
-   │  POST /api/chat  { question, profile, history }
-   ▼
-frontend — Next.js server route (keys stay server-side)
-   │ 1. build retrieval query (adds previous-turn courses for follow-ups)
-   │ 2. POST {RETRIEVAL_API_BASE_URL}/api/retrieve  ───────────►  backend — Express
-   │                                                               ranks courses with documented signals,
-   │ 3. normalize evidence: facts F1…Fn, sources S1…Sn  ◄────────  returns facts + sources + limitations
-   │ 4. generate answer
-   │      • ANTHROPIC_API_KEY set → LLM answer; every claim must cite fact ids and pass grounding checks
-   │      • no key / LLM error    → evidence-only: retrieved facts shown as-is, no AI text
-   ▼
-Structured Answer → UI (Official / profile overlap / AI interpretation tiers, numbered citations, notes)
+For a local PostgreSQL instance, use an existing database or initialize an isolated project cluster (Homebrew paths on macOS):
+
+```sh
+/opt/homebrew/opt/postgresql@17/bin/initdb -D .local/pgdata --auth=trust --encoding=UTF8 --no-locale
+/opt/homebrew/opt/postgresql@17/bin/pg_ctl -D .local/pgdata -l .local/postgres.log -o '-h 127.0.0.1 -p 55432 -k /tmp' start
 ```
 
-Retrieval, answer generation, and UI are separate modules. `/api/retrieve` returns evidence, not advice.
+Trust authentication here is for a loopback-only disposable local cluster. Never use it for cloud/production. The local URI is `postgresql://YOUR_LOCAL_USER@127.0.0.1:55432/postgres`. To stop it: `pg_ctl -D .local/pgdata stop` using the same binary directory.
 
-## Local development
-
-Requirements: Node.js ≥ 20.12 (tested on 22.x). No database install needed; the backend uses embedded
-PGlite by default.
-
-### 1. Backend (terminal 1)
-
-```bash
-cd backend
-npm ci
-cp .env.example .env        # defaults: PGlite in ./.pglite, PORT=3001
-npm run db:seed             # create schema + load 21 courses
-npm run dev                 # http://localhost:3001  (check: curl localhost:3001/api/health)
+```sh
+.venv/bin/python scripts/manage.py migrate
+.venv/bin/python scripts/manage.py validate database/seeds/candidates.json
+.venv/bin/python scripts/manage.py stage database/seeds/candidates.json
+.venv/bin/python scripts/manage.py status
 ```
 
-### 2. Frontend (terminal 2)
+Migrations are checksum-checked and transactional in the dedicated `navigator` schema; they do not reset the old schema. Stage is idempotent by content hash. Migrations use `MIGRATION_DATABASE_URL` when configured, otherwise `DATABASE_URL`.
 
-```bash
-cd frontend
-npm ci
-cp .env.example .env.local
-# edit .env.local:
-#   NEXT_PUBLIC_DATA_MODE=live
-#   RETRIEVAL_API_BASE_URL=http://localhost:3001
-#   ANTHROPIC_API_KEY=            # optional; leave empty for evidence-only mode
-npm run dev                 # http://localhost:3000
+Run in two terminals:
+
+```sh
+.venv/bin/python -m uvicorn app.main:app --app-dir backend --host 127.0.0.1 --port 8000 --no-access-log
 ```
 
-`NEXT_PUBLIC_DATA_MODE` is read at build time: restart `npm run dev` (or rebuild) after changing it.
-With `NEXT_PUBLIC_DATA_MODE=mock` (the default) the UI uses simulated answers, shows a "Mock mode"
-banner, and needs no backend.
-
-### 3. Check that they work together
-
-With both servers running:
-
-```bash
-cd frontend
-node scripts/e2e-chat.mjs                      # 6 scenarios, PASS/FAIL per scenario
-node scripts/e2e-chat.mjs --transcript out.md  # also write a readable transcript
+```sh
+.venv/bin/python -m http.server 8080 --bind 127.0.0.1 --directory frontend
 ```
 
-### Tests and checks
+Open http://localhost:8080. FastAPI's API documentation is at http://localhost:8000/docs. `frontend/js/config.js` contains the public backend origin only. Never put a key or database URL there.
 
-| Where | Command | What |
-|---|---|---|
-| backend | `npm test` | Seed-quality and API tests (in-memory PGlite) |
-| backend | `npm run typecheck` | `tsc --noEmit` |
-| frontend | `npm test` | Contract normalization, grounding validation, generation fallbacks |
-| frontend | `npm run lint` / `npm run typecheck` / `npm run build` | — |
-| frontend | `npm run check` | lint + typecheck + test + build |
+## Review and publish
 
-## Environment variables
+```sh
+.venv/bin/python scripts/manage.py review 1
+```
 
-| Project | Variable | Required | Notes |
-|---|---|---|---|
-| backend | `DATABASE_URL` | no | Postgres URL; empty = embedded PGlite |
-| backend | `PGLITE_DATA_DIR` | no | default `./.pglite` |
-| backend | `PORT` | no | default 3001 |
-| backend | `ALLOWED_ORIGIN` | no | CORS origin (the frontend calls the backend server-to-server, so CORS is not needed locally) |
-| frontend | `NEXT_PUBLIC_DATA_MODE` | no | `mock` (default) or `live` |
-| frontend | `RETRIEVAL_API_BASE_URL` | live mode | e.g. `http://localhost:3001` |
-| frontend | `RETRIEVAL_API_KEY` | no | bearer token if the backend requires one |
-| frontend | `ANTHROPIC_API_KEY` | no | enables LLM answers; server-side only |
-| frontend | `LLM_MODEL` | no | default `claude-sonnet-5-5` |
+A human must check the official source, source timestamp, catalog year, course metadata, aliases, original wording, AND/OR grouping, and unsupported grade/consent/concurrency conditions. Do not approve all imported records just because the old source said “verified.” Partial/truncated evidence cannot establish a complete prerequisite rule.
 
-Never commit `.env`, `.env.local`, or any real key. Only `.env.example` files are tracked.
+Export a candidate with `scripts/manage.py export 1 .local/candidate.json`. If corrections are needed, edit that JSON file and stage it as a new candidate. Reject an obsolete pending candidate with `scripts/manage.py reject 1 --reviewer 'YOUR NAME'`. The old candidate is retained. To collect changed official source text from one candidate:
 
-## Data and safety rules
+```sh
+.venv/bin/python scripts/collect.py candidate.json updated-candidate.json
+.venv/bin/python scripts/manage.py validate updated-candidate.json
+.venv/bin/python scripts/manage.py stage updated-candidate.json
+```
 
-- Requirement text is verbatim from the official catalog; course summaries are paraphrased and labeled.
-- Prerequisites are never inferred. Truncated or uncertain catalog text is flagged, not guessed.
-- Profile overlap is a computed comparison, never an eligibility decision.
-- No seat, schedule, instructor, or enrollment data is stored or implied.
-- No research data (interviews, user testing records) belongs in this repository.
+Collection checks official HTTPS destinations and follows at most five redirects. It invalidates existing logic on any text change, preserves metadata as review candidates, and never publishes. Client-rendered catalog pages may need manual browser collection; do not infer “no prerequisites” from an empty scrape.
 
-See `backend/docs/coverage_report.md` for known data gaps and `docs/integration-sprint-1.md` for the
-integration report.
+After review only:
 
-## Project docs
+```sh
+.venv/bin/python scripts/manage.py publish 1 --reviewer 'YOUR NAME' --confirm-course 'COMPSCI 61A'
+```
 
-- `backend/README.md` — knowledge base details, data update workflow
-- `backend/docs/api_contract.md` — retrieval API contract
-- `frontend/README.md` — UI details (written in Chinese)
+Use the actual candidate ID/code. Publication records the reviewer and time, verifies its evidence status, creates a new revision, and preserves old published versions. Unknown nodes are valid published information when the reviewer confirms that the source does not support a determination. `none` is reserved for explicitly evidenced absence of prerequisites.
+
+## Tests
+
+```sh
+.venv/bin/python -m pytest -q
+```
+
+Set `TEST_DATABASE_URL` privately in `.env` to a dedicated test/development PostgreSQL database to run integration tests. Tests create randomly named `test_...` schemas and drop those schemas afterwards. Never point tests at production. CI always starts PostgreSQL 17 and runs integration tests; missing PostgreSQL is reported as a skip locally, never as mocked SQL coverage.
+
+Live Gemini testing requires a real key and explicit opt-in:
+
+```sh
+RUN_LIVE_GEMINI=1 .venv/bin/python -m pytest backend/tests/test_gemini.py::test_live_gemini -q
+```
+
+Routine Gemini orchestration tests use deterministic SDK response objects. Live integration supplements those tests, not replaces them. No browser end-to-end test is claimed for the redesigned frontend.
+
+## API
+
+| Endpoint | Purpose |
+| --- | --- |
+| `GET /api/health` | Process/configuration status, no secrets |
+| `GET /api/ready` | Actual database query |
+| `GET /api/courses?query=...&catalog_year=2026-2027` | Code/title/FTS search |
+| `GET /api/courses/{code}?catalog_year=...` | Published course detail |
+| `GET /api/evidence/{id}?catalog_year=...` | Evidence linked to a published fact |
+| `POST /api/prerequisites/check` | Code, catalog year, temporary profile |
+| `POST /api/chat` | Message, catalog year, temporary profile, bounded history |
+
+The student can mark their course list complete. Otherwise unlisted courses yield `unknown`, not `not_satisfied`. Any explicit false branch makes AND false; any true branch makes OR true. Consent, grades and other unsupported facts are unknown. An absent rule is always unknown.
+
+## Cloud setup and delivery
+
+See [cloud setup](docs/cloud-setup.md), [architecture](docs/architecture.md), and [implementation report](docs/implementation-report.md).
+
+GitHub Actions runs tests on pushes/PRs. Azure deployment is manual, runs CI first, and requires an environment variable `DEPLOY_ENABLED=true` plus configured credentials. Keep that variable unset until resource and deployment approval. There is no auto-deployment to production and no auto-publication of academic records.

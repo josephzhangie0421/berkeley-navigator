@@ -1,0 +1,1136 @@
+[
+  {
+    "course_code": "COMPSCI 61A",
+    "department": "COMPSCI",
+    "title": "The Structure and Interpretation of Computer Programs",
+    "description": "Introductory programming course built around abstraction: functions, recursion, data structures and objects, interpreters, several programming paradigms, and a first look at algorithm efficiency.",
+    "description_kind": "paraphrased_summary",
+    "units": "4",
+    "catalog_year": "2026-2027",
+    "aliases": [
+      "CS 61A",
+      "CS61A"
+    ],
+    "source": {
+      "url": "https://undergraduate.catalog.berkeley.edu/courses/1044241",
+      "title": "UC Berkeley Catalog \u2014 COMPSCI 61A",
+      "text": "Prerequisite (as rendered, truncated): \"MATH 1A (may be taken concurrently) or Math 10A or Math 16A. Complete any\" | \"Programming experience equivalent to that gained from a score of 3 or above on the Advanced Placement Computer Science exam.\" Credit restriction: \"Students will receive no credit for COMPSCI 61A after completing COMPSCI 47A, COMPSCI 61AS, or COMPSCI W61A.\" Units: 4.",
+      "collected_at": "2026-11-09T17:50:00Z",
+      "verification_status": "unverified"
+    },
+    "requirements": [
+      {
+        "kind": "prerequisite",
+        "raw_text": "MATH 1A (may be taken concurrently) or Math 10A or Math 16A. Complete any | Programming experience equivalent to that gained from a score of 3 or above on the Advanced Placement Computer Science exam.",
+        "expression": {
+          "op": "unknown",
+          "reason": "Legacy record is raw_only; absence of a field is not proof of no prerequisites."
+        }
+      },
+      {
+        "kind": "credit_restriction",
+        "raw_text": "Students will receive no credit for COMPSCI 61A after completing COMPSCI 47A, COMPSCI 61AS, or COMPSCI W61A.",
+        "expression": {
+          "op": "unknown",
+          "reason": "No safely encoded requirement is available."
+        }
+      }
+    ]
+  },
+  {
+    "course_code": "COMPSCI 61B",
+    "department": "COMPSCI",
+    "title": "Data Structures",
+    "description": "Core data structures (lists, queues, trees, arrays, hash tables), abstract data types, memory management, sorting and searching, taught in Java.",
+    "description_kind": "paraphrased_summary",
+    "units": "4",
+    "catalog_year": "2026-2027",
+    "aliases": [
+      "CS 61B",
+      "CS61B"
+    ],
+    "source": {
+      "url": "https://undergraduate.catalog.berkeley.edu/courses/1044261",
+      "title": "UC Berkeley Catalog \u2014 COMPSCI 61B",
+      "text": "Prerequisite: \"COMPSCI 61A, COMPSCI 88, or ENGIN 7.\" Heading 'Complete ANY of the following Courses:' rendered with no items. Credit restriction: \"Students will receive no credit for COMPSCI 61B after completing COMPSCI 61BL, or COMPSCI 47B.\" Units: 4.",
+      "collected_at": "2026-11-09T17:50:00Z",
+      "verification_status": "unverified"
+    },
+    "requirements": [
+      {
+        "kind": "prerequisite",
+        "raw_text": "COMPSCI 61A, COMPSCI 88, or ENGIN 7.",
+        "expression": {
+          "op": "any",
+          "items": [
+            {
+              "op": "course",
+              "course": "COMPSCI 61A"
+            },
+            {
+              "op": "course",
+              "course": "COMPSCI 88"
+            },
+            {
+              "op": "course",
+              "course": "ENGIN 7"
+            }
+          ]
+        }
+      },
+      {
+        "kind": "credit_restriction",
+        "raw_text": "Students will receive no credit for COMPSCI 61B after completing COMPSCI 61BL, or COMPSCI 47B.",
+        "expression": {
+          "op": "unknown",
+          "reason": "No safely encoded requirement is available."
+        }
+      }
+    ]
+  },
+  {
+    "course_code": "COMPSCI 61C",
+    "department": "COMPSCI",
+    "title": "Great Ideas of Computer Architecture (Machine Structures)",
+    "description": "How computers are organized internally: machine architecture, support for high-level languages, OS mechanisms (I/O, interrupts, memory management, process switching), and logic design basics.",
+    "description_kind": "paraphrased_summary",
+    "units": "4",
+    "catalog_year": "2026-2027",
+    "aliases": [
+      "CS 61C",
+      "CS61C"
+    ],
+    "source": {
+      "url": "https://undergraduate.catalog.berkeley.edu/courses/1044281",
+      "title": "UC Berkeley Catalog \u2014 COMPSCI 61C",
+      "text": "Prerequisite (rendered as two segments): \"COMPSCI 61A\" | \"COMPSCI 61B or 61BL, or programming experience equivalent to that gained in 9C, 9F, or 9G.\" Credit restriction: none listed. Units: 4.",
+      "collected_at": "2026-11-09T17:50:00Z",
+      "verification_status": "unverified"
+    },
+    "requirements": [
+      {
+        "kind": "prerequisite",
+        "raw_text": "COMPSCI 61A | COMPSCI 61B or 61BL, or programming experience equivalent to that gained in 9C, 9F, or 9G.",
+        "expression": {
+          "op": "unknown",
+          "reason": "Legacy record is partial; absence of a field is not proof of no prerequisites."
+        }
+      }
+    ]
+  },
+  {
+    "course_code": "COMPSCI 70",
+    "department": "COMPSCI",
+    "title": "Discrete Mathematics and Probability Theory",
+    "description": "Logic, induction and infinity (with applications such as undecidability and stable matching), modular arithmetic and polynomials (cryptography, error-correcting codes), then discrete probability through the law of large numbers.",
+    "description_kind": "paraphrased_summary",
+    "units": "4",
+    "catalog_year": "2026-2027",
+    "aliases": [
+      "CS 70",
+      "CS70"
+    ],
+    "source": {
+      "url": "https://undergraduate.catalog.berkeley.edu/courses/1044331",
+      "title": "UC Berkeley Catalog \u2014 COMPSCI 70",
+      "text": "Prerequisite (rendered as two segments, middle appears truncated): \"Sophomore mathematical maturity, and programming experience equivalent to that gained in 3\" | \"or the Advanced Placement Computer Science A course.\" Credit restriction: none listed. Units: 4.",
+      "collected_at": "2026-11-09T17:50:00Z",
+      "verification_status": "unverified"
+    },
+    "requirements": [
+      {
+        "kind": "prerequisite",
+        "raw_text": "Sophomore mathematical maturity, and programming experience equivalent to that gained in 3 | or the Advanced Placement Computer Science A course.",
+        "expression": {
+          "op": "unknown",
+          "reason": "Legacy record is raw_only; absence of a field is not proof of no prerequisites."
+        }
+      }
+    ]
+  },
+  {
+    "course_code": "COMPSCI 162",
+    "department": "COMPSCI",
+    "title": "Operating Systems and System Programming",
+    "description": "Operating system design and system-level programming: processes, threads, synchronization, memory management, file systems, I/O, scheduling, and security.",
+    "description_kind": "paraphrased_summary",
+    "units": "4",
+    "catalog_year": "2026-2027",
+    "aliases": [
+      "CS 162",
+      "CS162"
+    ],
+    "source": {
+      "url": "https://www2.eecs.berkeley.edu/Courses/COMPSCI162/index.html",
+      "title": "Berkeley EECS department course page \u2014 COMPSCI 162",
+      "text": "Prerequisites: \"COMPSCI 61B, COMPSCI 61C, and COMPSCI 70.\" Units: 4. Page footer '\u00a9 2022 UC Regents'; lists schedules for Fall 2022 and Spring 2023. No catalog page for COMPSCI 162 was located in the current catalog during collection.",
+      "collected_at": "2026-11-09T17:58:00Z",
+      "verification_status": "unverified"
+    },
+    "requirements": [
+      {
+        "kind": "prerequisite",
+        "raw_text": "COMPSCI 61B, COMPSCI 61C, and COMPSCI 70.",
+        "expression": {
+          "op": "all",
+          "items": [
+            {
+              "op": "course",
+              "course": "COMPSCI 61B"
+            },
+            {
+              "op": "course",
+              "course": "COMPSCI 61C"
+            },
+            {
+              "op": "course",
+              "course": "COMPSCI 70"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "course_code": "COMPSCI 170",
+    "department": "COMPSCI",
+    "title": "Efficient Algorithms and Intractable Problems",
+    "description": "Design and analysis of efficient algorithms, lower bounds and data structures, then models of computation, NP-completeness, and intractable or unsolvable problems.",
+    "description_kind": "paraphrased_summary",
+    "units": "4",
+    "catalog_year": "2026-2027",
+    "aliases": [
+      "CS 170",
+      "CS170"
+    ],
+    "source": {
+      "url": "https://undergraduate.catalog.berkeley.edu/courses/1042811",
+      "title": "UC Berkeley Catalog \u2014 COMPSCI 170",
+      "text": "Prerequisite: \"COMPSCI 61B and COMPSCI 70.\" Heading 'Complete ALL of the following Courses:' rendered with no items. Credit restriction: none listed. Units: 4.",
+      "collected_at": "2026-11-09T17:50:00Z",
+      "verification_status": "unverified"
+    },
+    "requirements": [
+      {
+        "kind": "prerequisite",
+        "raw_text": "COMPSCI 61B and COMPSCI 70.",
+        "expression": {
+          "op": "all",
+          "items": [
+            {
+              "op": "course",
+              "course": "COMPSCI 61B"
+            },
+            {
+              "op": "course",
+              "course": "COMPSCI 70"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "course_code": "COMPSCI 186",
+    "department": "COMPSCI",
+    "title": "Introduction to Database Systems",
+    "description": "Data storage and access, database data models and query languages, protection and integrity, transaction processing; students build a database system as a term project.",
+    "description_kind": "paraphrased_summary",
+    "units": "4",
+    "catalog_year": "2026-2027",
+    "aliases": [
+      "CS 186",
+      "CS186"
+    ],
+    "source": {
+      "url": "https://undergraduate.catalog.berkeley.edu/courses/1042861",
+      "title": "UC Berkeley Catalog \u2014 COMPSCI 186",
+      "text": "Prerequisite: \"COMPSCI 61C or COMPSCI 47C\" | \"COMPSCI 47C may be taken as a co-requisite for transfer students.\" Heading 'Complete ANY of the following Courses:' rendered with no items. Credit restriction: \"Students will receive no credit for COMPSCI 186 after completing COMPSCI W186.\" Units: 4.",
+      "collected_at": "2026-11-09T17:58:00Z",
+      "verification_status": "unverified"
+    },
+    "requirements": [
+      {
+        "kind": "prerequisite",
+        "raw_text": "COMPSCI 61C or COMPSCI 47C | COMPSCI 47C may be taken as a co-requisite for transfer students.",
+        "expression": {
+          "op": "any",
+          "items": [
+            {
+              "op": "course",
+              "course": "COMPSCI 61C"
+            },
+            {
+              "op": "unknown",
+              "reason": "may be taken as a co-requisite for transfer students"
+            }
+          ]
+        }
+      },
+      {
+        "kind": "credit_restriction",
+        "raw_text": "Students will receive no credit for COMPSCI 186 after completing COMPSCI W186.",
+        "expression": {
+          "op": "unknown",
+          "reason": "No safely encoded requirement is available."
+        }
+      }
+    ]
+  },
+  {
+    "course_code": "COMPSCI 188",
+    "department": "COMPSCI",
+    "title": "Introduction to Artificial Intelligence",
+    "description": "Foundations of building intelligent systems: search, game playing, reasoning under uncertainty, machine learning, robotics, and language understanding.",
+    "description_kind": "paraphrased_summary",
+    "units": "4",
+    "catalog_year": "2026-2027",
+    "aliases": [
+      "CS 188",
+      "CS188"
+    ],
+    "source": {
+      "url": "https://undergraduate.catalog.berkeley.edu/courses/1042871",
+      "title": "UC Berkeley Catalog \u2014 COMPSCI 188",
+      "text": "Prerequisite: \"COMPSCI 61A, COMPSCI 61B, and COMPSCI 70.\" Credit restriction: none listed. Units: 4.",
+      "collected_at": "2026-11-09T17:50:00Z",
+      "verification_status": "unverified"
+    },
+    "requirements": [
+      {
+        "kind": "prerequisite",
+        "raw_text": "COMPSCI 61A, COMPSCI 61B, and COMPSCI 70.",
+        "expression": {
+          "op": "all",
+          "items": [
+            {
+              "op": "course",
+              "course": "COMPSCI 61A"
+            },
+            {
+              "op": "course",
+              "course": "COMPSCI 61B"
+            },
+            {
+              "op": "course",
+              "course": "COMPSCI 70"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "course_code": "COMPSCI 189",
+    "department": "COMPSCI",
+    "title": "Introduction to Machine Learning",
+    "description": "Theory, algorithms and applications of machine learning: supervised regression and classification, generative and discriminative probabilistic models, Bayesian learning, clustering, time series, dimensionality reduction, with programming projects.",
+    "description_kind": "paraphrased_summary",
+    "units": "4",
+    "catalog_year": "2026-2027",
+    "aliases": [
+      "CS 189",
+      "CS189"
+    ],
+    "source": {
+      "url": "https://undergraduate.catalog.berkeley.edu/courses/1042881",
+      "title": "UC Berkeley Catalog \u2014 COMPSCI 189",
+      "text": "Prerequisite: \"MATH 53 and MATH 54; and COMPSCI 70 or consent of instructor.\" Department: Electrical Engineering and Computer Sciences. Credit restriction: none listed. Units: 4.",
+      "collected_at": "2026-11-09T17:50:00Z",
+      "verification_status": "unverified"
+    },
+    "requirements": [
+      {
+        "kind": "prerequisite",
+        "raw_text": "MATH 53 and MATH 54; and COMPSCI 70 or consent of instructor.",
+        "expression": {
+          "op": "all",
+          "items": [
+            {
+              "op": "course",
+              "course": "MATH 53"
+            },
+            {
+              "op": "course",
+              "course": "MATH 54"
+            },
+            {
+              "op": "any",
+              "items": [
+                {
+                  "op": "course",
+                  "course": "COMPSCI 70"
+                },
+                {
+                  "op": "unknown",
+                  "reason": "consent of instructor"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "course_code": "DATA C8",
+    "department": "DATA",
+    "title": "Foundations of Data Science",
+    "description": "Data analysis through statistical inference and programming on real datasets (economic, text, geographic, social network), including privacy and data-ownership issues.",
+    "description_kind": "paraphrased_summary",
+    "units": "4",
+    "catalog_year": "2026-2027",
+    "aliases": [
+      "COMPSCI C8",
+      "STAT C8",
+      "INFO C8",
+      "Data 8",
+      "DATA 8"
+    ],
+    "source": {
+      "url": "https://undergraduate.catalog.berkeley.edu/courses/1245674",
+      "title": "UC Berkeley Catalog \u2014 DATA C8",
+      "text": "No formal prerequisite. Requirement note: \"This course may be taken on its own, but students are encouraged to take it concurrently\" | \"with a data science connector course (numbered 88 in a range of departments).\" Credit restriction: \"Students will receive no credit for DATA C8\\COMPSCI C8\\INFO C8\\STAT C8 after completing COMPSCI 8, or DATA 8.\" Formerly Computer Science C8, Statistics C8, or Information C8. Units: 4.",
+      "collected_at": "2026-11-09T17:50:00Z",
+      "verification_status": "unverified"
+    },
+    "requirements": [
+      {
+        "kind": "advisory",
+        "raw_text": "This course may be taken on its own, but students are encouraged to take it concurrently | with a data science connector course (numbered 88 in a range of departments).",
+        "expression": {
+          "op": "unknown",
+          "reason": "No safely encoded requirement is available."
+        }
+      },
+      {
+        "kind": "credit_restriction",
+        "raw_text": "Students will receive no credit for DATA C8\\COMPSCI C8\\INFO C8\\STAT C8 after completing COMPSCI 8, or DATA 8.",
+        "expression": {
+          "op": "unknown",
+          "reason": "No safely encoded requirement is available."
+        }
+      }
+    ]
+  },
+  {
+    "course_code": "DATA C88C",
+    "department": "DATA",
+    "title": "Computational Structures in Data Science",
+    "description": "Follows DATA C8 by teaching the structures underlying data science programs, algorithms and languages, including functional, object-oriented and declarative programming, with larger projects.",
+    "description_kind": "paraphrased_summary",
+    "units": "3",
+    "catalog_year": "2026-2027",
+    "aliases": [
+      "COMPSCI C88C",
+      "COMPSCI 88",
+      "CS 88",
+      "Data 88C"
+    ],
+    "source": {
+      "url": "https://undergraduate.catalog.berkeley.edu/courses/1253643",
+      "title": "UC Berkeley Catalog \u2014 COMPSCI/DATA C88C",
+      "text": "Page displays COMPSCI C88C. No Prerequisite field. Credit restriction: \"Students will receive no credit for DATA C88C after completing COMPSCI 61A.\" Former name: Computer Science 88. Units: 3.",
+      "collected_at": "2026-11-09T17:50:00Z",
+      "verification_status": "unverified"
+    },
+    "requirements": [
+      {
+        "kind": "prerequisite",
+        "raw_text": "(No Prerequisite field shown on catalog page.)",
+        "expression": {
+          "op": "unknown",
+          "reason": "Legacy record is none; absence of a field is not proof of no prerequisites."
+        }
+      },
+      {
+        "kind": "credit_restriction",
+        "raw_text": "Students will receive no credit for DATA C88C after completing COMPSCI 61A.",
+        "expression": {
+          "op": "unknown",
+          "reason": "No safely encoded requirement is available."
+        }
+      }
+    ]
+  },
+  {
+    "course_code": "DATA C100",
+    "department": "DATA",
+    "title": "Principles & Techniques of Data Science",
+    "description": "The full data science lifecycle: framing questions, collecting and cleaning data, visualization, statistical inference and prediction, and decision-making, using data query languages, basic machine learning methods and large-scale data tools.",
+    "description_kind": "paraphrased_summary",
+    "units": "4",
+    "catalog_year": "2026-2027",
+    "aliases": [
+      "COMPSCI C100",
+      "STAT C100",
+      "Data 100",
+      "DATA 100"
+    ],
+    "source": {
+      "url": "https://undergraduate.catalog.berkeley.edu/courses/1480472",
+      "title": "UC Berkeley Catalog \u2014 DATA/COMPSCI/STAT C100",
+      "text": "Page displays COMPSCI C100. Prerequisite (rendered as segments): \"DATA C8 or STAT 20 with a C- or better, or Pass; and COMPSCI 61A, COMPSCI/DATA C88C, or ENGIN 7\" | \" with a C- or better, or Pass; Corequisite: MATH 54, 56, 110, ELENG 66, PHYSICS 89 or equivalent linear algebra\" | \" (C- or better, or Pass, required if completed prior to Data C100).\" Credit restriction: \"Students will receive no credit for DATA C100\\STAT C100\\COMPSCI C100 after completing DATA 100.\" Former name: Statistics C100/Computer Science C100. Units: 4.",
+      "collected_at": "2026-11-09T17:50:00Z",
+      "verification_status": "unverified"
+    },
+    "requirements": [
+      {
+        "kind": "prerequisite",
+        "raw_text": "DATA C8 or STAT 20 with a C- or better, or Pass; and COMPSCI 61A, COMPSCI/DATA C88C, or ENGIN 7 | with a C- or better, or Pass;",
+        "expression": {
+          "op": "all",
+          "items": [
+            {
+              "op": "all",
+              "items": [
+                {
+                  "op": "any",
+                  "items": [
+                    {
+                      "op": "course",
+                      "course": "DATA C8"
+                    },
+                    {
+                      "op": "course",
+                      "course": "STAT 20"
+                    }
+                  ]
+                },
+                {
+                  "op": "any",
+                  "items": [
+                    {
+                      "op": "course",
+                      "course": "COMPSCI 61A"
+                    },
+                    {
+                      "op": "course",
+                      "course": "DATA C88C"
+                    },
+                    {
+                      "op": "course",
+                      "course": "ENGIN 7"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "op": "unknown",
+              "reason": "Grade condition: C- or better, or Pass"
+            }
+          ]
+        }
+      },
+      {
+        "kind": "corequisite",
+        "raw_text": "Corequisite: MATH 54, 56, 110, ELENG 66, PHYSICS 89 or equivalent linear algebra | (C- or better, or Pass, required if completed prior to Data C100).",
+        "expression": {
+          "op": "any",
+          "items": [
+            {
+              "op": "course",
+              "course": "MATH 54"
+            },
+            {
+              "op": "course",
+              "course": "MATH 56"
+            },
+            {
+              "op": "course",
+              "course": "MATH 110"
+            },
+            {
+              "op": "course",
+              "course": "ELENG 66"
+            },
+            {
+              "op": "course",
+              "course": "PHYSICS 89"
+            },
+            {
+              "op": "unknown",
+              "reason": "equivalent linear algebra"
+            }
+          ]
+        }
+      },
+      {
+        "kind": "credit_restriction",
+        "raw_text": "Students will receive no credit for DATA C100\\STAT C100\\COMPSCI C100 after completing DATA 100.",
+        "expression": {
+          "op": "unknown",
+          "reason": "No safely encoded requirement is available."
+        }
+      }
+    ]
+  },
+  {
+    "course_code": "DATA C102",
+    "department": "DATA",
+    "title": "Data, Inference, and Decisions",
+    "description": "Probabilistic foundations of inference and the modeling-to-decision cycle, including its social and ethical side: hypothesis testing, causal inference, experimental design, Bayesian methods, privacy, recommender systems and an introduction to machine learning.",
+    "description_kind": "paraphrased_summary",
+    "units": "4",
+    "catalog_year": "2026-2027",
+    "aliases": [
+      "STAT 102",
+      "Data 102",
+      "DATA 102"
+    ],
+    "source": {
+      "url": "https://graduate.catalog.berkeley.edu/courses/1583262",
+      "title": "UC Berkeley Catalog \u2014 DATA C102",
+      "text": "Prerequisite (rendered as segments): \"Math 54 or 56 or 110 or Stat 89A or Physics 89 or both of ELENG 64 and ELENG 66 with a C- or better, or Pass;\" | \"Data/Stat/CompSci C100 with a C- or better, or Pass; and any of EECS 126, Data/Stat C140, Stat 134,\" | \"IndEng 172, Math 106 with a C- or better, or Pass. Data/Stat C140 or EECS 126 are preferred\". Department: Data Science Undergraduate Studies. Former name: Statistics 102. Credit restriction: none listed. Units: 4. Page is on graduate.catalog.berkeley.edu (same course ID system).",
+      "collected_at": "2026-11-09T17:55:00Z",
+      "verification_status": "unverified"
+    },
+    "requirements": [
+      {
+        "kind": "prerequisite",
+        "raw_text": "Math 54 or 56 or 110 or Stat 89A or Physics 89 or both of ELENG 64 and ELENG 66 with a C- or better, or Pass; | Data/Stat/CompSci C100 with a C- or better, or Pass; and any of EECS 126, Data/Stat C140, Stat 134, | IndEng 172, Math 106 with a C- or better, or Pass. Data/Stat C140 or EECS 126 are preferred",
+        "expression": {
+          "op": "all",
+          "items": [
+            {
+              "op": "all",
+              "items": [
+                {
+                  "op": "any",
+                  "items": [
+                    {
+                      "op": "course",
+                      "course": "MATH 54"
+                    },
+                    {
+                      "op": "course",
+                      "course": "MATH 56"
+                    },
+                    {
+                      "op": "course",
+                      "course": "MATH 110"
+                    },
+                    {
+                      "op": "course",
+                      "course": "STAT 89A"
+                    },
+                    {
+                      "op": "course",
+                      "course": "PHYSICS 89"
+                    },
+                    {
+                      "op": "all",
+                      "items": [
+                        {
+                          "op": "course",
+                          "course": "ELENG 64"
+                        },
+                        {
+                          "op": "course",
+                          "course": "ELENG 66"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "op": "course",
+                  "course": "DATA C100"
+                },
+                {
+                  "op": "any",
+                  "items": [
+                    {
+                      "op": "course",
+                      "course": "EECS 126"
+                    },
+                    {
+                      "op": "course",
+                      "course": "DATA C140"
+                    },
+                    {
+                      "op": "course",
+                      "course": "STAT 134"
+                    },
+                    {
+                      "op": "course",
+                      "course": "INDENG 172"
+                    },
+                    {
+                      "op": "course",
+                      "course": "MATH 106"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "op": "unknown",
+              "reason": "Grade condition: C- or better, or Pass"
+            }
+          ]
+        }
+      },
+      {
+        "kind": "recommendation",
+        "raw_text": "Data/Stat C140 or EECS 126 are preferred",
+        "expression": {
+          "op": "any",
+          "items": [
+            {
+              "op": "course",
+              "course": "DATA C140"
+            },
+            {
+              "op": "course",
+              "course": "EECS 126"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "course_code": "DATA C140",
+    "department": "DATA",
+    "title": "Probability for Data Science",
+    "description": "Probability taught through mathematics plus programming and simulation: common distributions, bounds and approximations, Markov chains, conditioning and Bayesian methods, and basic regression and modeling.",
+    "description_kind": "paraphrased_summary",
+    "units": "4",
+    "catalog_year": "2026-2027",
+    "aliases": [
+      "STAT C140",
+      "Data 140",
+      "DATA 140"
+    ],
+    "source": {
+      "url": "https://graduate.catalog.berkeley.edu/courses/1480152",
+      "title": "UC Berkeley Catalog \u2014 DATA C140",
+      "text": "Prerequisite (rendered as segments): \"DATA/COMPSCI/INFO/STAT C8, or both STAT 20 and one of COMPSCI 61A or COMPSCI/DATA C88C with C- or better, or Pass;\" | \"and one year of calculus at the level of MATH 1A-1B or MATH 51-52 or higher, with C- or better, or Pass.\" | \"Corequisite: MATH 54, MATH 56, ELENG 64, MATH 110 or equivalent linear algebra\" | \"(C- or better, or Pass, required if completed prior to enrollment in Data/Stat C140).\" Credit restriction: \"Students will receive no credit for STAT C140 after completing STAT 134, or EECS 126.\" Formerly Statistics C140. Units: 4.",
+      "collected_at": "2026-11-09T17:50:00Z",
+      "verification_status": "unverified"
+    },
+    "requirements": [
+      {
+        "kind": "prerequisite",
+        "raw_text": "DATA/COMPSCI/INFO/STAT C8, or both STAT 20 and one of COMPSCI 61A or COMPSCI/DATA C88C with C- or better, or Pass; | and one year of calculus at the level of MATH 1A-1B or MATH 51-52 or higher, with C- or better, or Pass.",
+        "expression": {
+          "op": "all",
+          "items": [
+            {
+              "op": "all",
+              "items": [
+                {
+                  "op": "any",
+                  "items": [
+                    {
+                      "op": "course",
+                      "course": "DATA C8"
+                    },
+                    {
+                      "op": "all",
+                      "items": [
+                        {
+                          "op": "course",
+                          "course": "STAT 20"
+                        },
+                        {
+                          "op": "any",
+                          "items": [
+                            {
+                              "op": "course",
+                              "course": "COMPSCI 61A"
+                            },
+                            {
+                              "op": "course",
+                              "course": "DATA C88C"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "op": "unknown",
+                  "reason": "one year of calculus at the level of MATH 1A-1B or MATH 51-52 or higher"
+                }
+              ]
+            },
+            {
+              "op": "unknown",
+              "reason": "Grade condition: C- or better, or Pass"
+            }
+          ]
+        }
+      },
+      {
+        "kind": "corequisite",
+        "raw_text": "Corequisite: MATH 54, MATH 56, ELENG 64, MATH 110 or equivalent linear algebra | (C- or better, or Pass, required if completed prior to enrollment in Data/Stat C140).",
+        "expression": {
+          "op": "any",
+          "items": [
+            {
+              "op": "course",
+              "course": "MATH 54"
+            },
+            {
+              "op": "course",
+              "course": "MATH 56"
+            },
+            {
+              "op": "course",
+              "course": "ELENG 64"
+            },
+            {
+              "op": "course",
+              "course": "MATH 110"
+            },
+            {
+              "op": "unknown",
+              "reason": "equivalent linear algebra"
+            }
+          ]
+        }
+      },
+      {
+        "kind": "credit_restriction",
+        "raw_text": "Students will receive no credit for STAT C140 after completing STAT 134, or EECS 126.",
+        "expression": {
+          "op": "unknown",
+          "reason": "No safely encoded requirement is available."
+        }
+      }
+    ]
+  },
+  {
+    "course_code": "DATA C182",
+    "department": "DATA",
+    "title": "Designing, Visualizing and Understanding Deep Neural Networks",
+    "description": "Design and optimization of deep neural networks, visualizing their training and behavior, and the parts of deep learning theory with formal guarantees, including generative and adversarial models.",
+    "description_kind": "paraphrased_summary",
+    "units": "4",
+    "catalog_year": "2026-2027",
+    "aliases": [
+      "COMPSCI 182",
+      "CS 182",
+      "CS182",
+      "Data 182"
+    ],
+    "source": {
+      "url": "https://undergraduate.catalog.berkeley.edu/courses/1571263",
+      "title": "UC Berkeley Catalog \u2014 DATA C182",
+      "text": "Prerequisite block (rendered as segments): \"MATH 53, MATH 54, and COMPSCI 61B\" | 'Complete ALL of the following Courses:' \"COMPSCI 70 or STAT 134\" | 'Complete ANY of the following Courses:' \"COMPSCI 189 is recommended.\" | an empty 'Complete ALL of the following Courses:' heading. Credit restriction: \"Students will receive no credit for COMPSCI 182 after completing COMPSCI W182, or COMPSCI L182.\" Formerly Computer Science 182. Units: 4.",
+      "collected_at": "2026-11-09T17:50:00Z",
+      "verification_status": "unverified"
+    },
+    "requirements": [
+      {
+        "kind": "prerequisite",
+        "raw_text": "MATH 53, MATH 54, and COMPSCI 61B | COMPSCI 70 or STAT 134",
+        "expression": {
+          "op": "unknown",
+          "reason": "Legacy record is partial; absence of a field is not proof of no prerequisites."
+        }
+      },
+      {
+        "kind": "recommendation",
+        "raw_text": "COMPSCI 189 is recommended.",
+        "expression": {
+          "op": "any",
+          "items": [
+            {
+              "op": "course",
+              "course": "COMPSCI 189"
+            }
+          ]
+        }
+      },
+      {
+        "kind": "credit_restriction",
+        "raw_text": "Students will receive no credit for COMPSCI 182 after completing COMPSCI W182, or COMPSCI L182.",
+        "expression": {
+          "op": "unknown",
+          "reason": "No safely encoded requirement is available."
+        }
+      }
+    ]
+  },
+  {
+    "course_code": "EECS 126",
+    "department": "EECS",
+    "title": "Probability and Random Processes",
+    "description": "Probability and random processes with applications in networking, communications, signal processing and control: random variables and distributions, limit theorems, estimation and detection, Markov chains.",
+    "description_kind": "paraphrased_summary",
+    "units": "4",
+    "catalog_year": "2026-2027",
+    "aliases": [
+      "EE 126",
+      "ELENG 126"
+    ],
+    "source": {
+      "url": "https://undergraduate.catalog.berkeley.edu/courses/1543161",
+      "title": "UC Berkeley Catalog \u2014 EECS 126",
+      "text": "Prerequisite: \"COMPSCI 70 preferred but not required.\" | 'Complete ALL of the following Courses:' heading followed only by \"Familiarity with linear algebra.\" Credit restriction: none listed. Units: 4.",
+      "collected_at": "2026-11-09T17:58:00Z",
+      "verification_status": "unverified"
+    },
+    "requirements": [
+      {
+        "kind": "prerequisite",
+        "raw_text": "COMPSCI 70 preferred but not required. | Familiarity with linear algebra.",
+        "expression": {
+          "op": "unknown",
+          "reason": "Legacy record is partial; absence of a field is not proof of no prerequisites."
+        }
+      }
+    ]
+  },
+  {
+    "course_code": "EECS 127",
+    "department": "EECS",
+    "title": "Optimization Models in Engineering",
+    "description": "Optimization models and their use in machine learning, statistics, decision-making and control, focusing on efficiently solvable problems such as linear and constrained least squares.",
+    "description_kind": "paraphrased_summary",
+    "units": "4",
+    "catalog_year": "2026-2027",
+    "aliases": [
+      "EE 127"
+    ],
+    "source": {
+      "url": "https://undergraduate.catalog.berkeley.edu/courses/1063022",
+      "title": "UC Berkeley Catalog \u2014 EECS 127",
+      "text": "Prerequisite: \"ELENG 64 and ELENG 66, or consent of instructor.\" Heading 'Complete ALL of the following Courses:' rendered with no items. Credit restriction: none listed. Units: 4.",
+      "collected_at": "2026-11-09T17:58:00Z",
+      "verification_status": "unverified"
+    },
+    "requirements": [
+      {
+        "kind": "prerequisite",
+        "raw_text": "ELENG 64 and ELENG 66, or consent of instructor.",
+        "expression": {
+          "op": "any",
+          "items": [
+            {
+              "op": "all",
+              "items": [
+                {
+                  "op": "course",
+                  "course": "ELENG 64"
+                },
+                {
+                  "op": "course",
+                  "course": "ELENG 66"
+                }
+              ]
+            },
+            {
+              "op": "unknown",
+              "reason": "consent of instructor"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "course_code": "MATH 53",
+    "department": "MATH",
+    "title": "Multivariable Calculus",
+    "description": "Parametric and polar curves, vectors in two and three dimensions, partial derivatives, multiple integrals, vector calculus and the theorems of Green, Gauss and Stokes.",
+    "description_kind": "paraphrased_summary",
+    "units": "4",
+    "catalog_year": "2026-2027",
+    "aliases": [
+      "Math 53"
+    ],
+    "source": {
+      "url": "https://undergraduate.catalog.berkeley.edu/courses/1147021",
+      "title": "UC Berkeley Catalog \u2014 MATH 53",
+      "text": "Prerequisite: \"MATH 52\" | 'Complete ALL of the following Courses:' (no items rendered) | \"Previously offered as 1B or N1B\". Credit restriction: none listed. Units: 4.",
+      "collected_at": "2026-11-09T17:58:00Z",
+      "verification_status": "unverified"
+    },
+    "requirements": [
+      {
+        "kind": "prerequisite",
+        "raw_text": "MATH 52 | Previously offered as 1B or N1B",
+        "expression": {
+          "op": "all",
+          "items": [
+            {
+              "op": "course",
+              "course": "MATH 52"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "course_code": "MATH 54",
+    "department": "MATH",
+    "title": "Linear Algebra and Differential Equations",
+    "description": "Matrices and determinants, vector and inner-product spaces, eigenvalues and eigenvectors, linear second-order differential equations, first-order constant-coefficient systems, and Fourier series.",
+    "description_kind": "paraphrased_summary",
+    "units": "4",
+    "catalog_year": "2026-2027",
+    "aliases": [
+      "Math 54"
+    ],
+    "source": {
+      "url": "https://graduate.catalog.berkeley.edu/courses/1147051",
+      "title": "UC Berkeley Catalog \u2014 MATH 54",
+      "text": "Prerequisite: \"Mathematics 52 (previously 1B or N1B), 10B, or N10B.\" Credit restriction: \"Students will receive no credit for MATH 54 after completing MATH H54, MATH N54, MATH W54, or MATH 56.\" Units: 4.",
+      "collected_at": "2026-11-09T17:58:00Z",
+      "verification_status": "unverified"
+    },
+    "requirements": [
+      {
+        "kind": "prerequisite",
+        "raw_text": "Mathematics 52 (previously 1B or N1B), 10B, or N10B.",
+        "expression": {
+          "op": "any",
+          "items": [
+            {
+              "op": "course",
+              "course": "MATH 52"
+            },
+            {
+              "op": "course",
+              "course": "MATH 10B"
+            },
+            {
+              "op": "course",
+              "course": "MATH N10B"
+            }
+          ]
+        }
+      },
+      {
+        "kind": "credit_restriction",
+        "raw_text": "Students will receive no credit for MATH 54 after completing MATH H54, MATH N54, MATH W54, or MATH 56.",
+        "expression": {
+          "op": "unknown",
+          "reason": "No safely encoded requirement is available."
+        }
+      }
+    ]
+  },
+  {
+    "course_code": "STAT 134",
+    "department": "STAT",
+    "title": "Concepts of Probability",
+    "description": "Introductory probability emphasizing concepts and applications: conditional expectation, independence, laws of large numbers, discrete and continuous random variables, the central limit theorem, and selected topics such as Poisson processes and Markov chains.",
+    "description_kind": "paraphrased_summary",
+    "units": "4",
+    "catalog_year": "2026-2027",
+    "aliases": [
+      "Stat 134"
+    ],
+    "source": {
+      "url": "https://undergraduate.catalog.berkeley.edu/courses/1220231",
+      "title": "UC Berkeley Catalog \u2014 STAT 134",
+      "text": "Prerequisite: \"One year of calculus.\" Credit restriction: none listed. Units: 4.",
+      "collected_at": "2026-11-09T17:55:00Z",
+      "verification_status": "unverified"
+    },
+    "requirements": [
+      {
+        "kind": "prerequisite",
+        "raw_text": "One year of calculus.",
+        "expression": {
+          "op": "all",
+          "items": [
+            {
+              "op": "unknown",
+              "reason": "One year of calculus."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "course_code": "STAT 135",
+    "department": "STAT",
+    "title": "Concepts of Statistics",
+    "description": "Survey of statistical theory and methods (descriptive statistics, maximum likelihood, nonparametric and goodness-of-fit tests, ANOVA, bootstrap, least squares) with a lab applying them to scientific and engineering data.",
+    "description_kind": "paraphrased_summary",
+    "units": "4",
+    "catalog_year": "2026-2027",
+    "aliases": [
+      "Stat 135"
+    ],
+    "source": {
+      "url": "https://undergraduate.catalog.berkeley.edu/courses/1220241",
+      "title": "UC Berkeley Catalog \u2014 STAT 135",
+      "text": "Prerequisite: \"STAT 134 or STAT 140; and MATH 54, EL ENG 16A, STAT 89A, MATH 110 or equivalent linear algebra.\" | \"Strongly recommended corerequisite: STAT 133.\" (spelling 'corerequisite' as on page). Credit restriction: none listed. Units: 4.",
+      "collected_at": "2026-11-09T17:55:00Z",
+      "verification_status": "unverified"
+    },
+    "requirements": [
+      {
+        "kind": "prerequisite",
+        "raw_text": "STAT 134 or STAT 140; and MATH 54, EL ENG 16A, STAT 89A, MATH 110 or equivalent linear algebra.",
+        "expression": {
+          "op": "all",
+          "items": [
+            {
+              "op": "any",
+              "items": [
+                {
+                  "op": "course",
+                  "course": "STAT 134"
+                },
+                {
+                  "op": "course",
+                  "course": "STAT 140"
+                }
+              ]
+            },
+            {
+              "op": "any",
+              "items": [
+                {
+                  "op": "course",
+                  "course": "MATH 54"
+                },
+                {
+                  "op": "course",
+                  "course": "ELENG 16A"
+                },
+                {
+                  "op": "course",
+                  "course": "STAT 89A"
+                },
+                {
+                  "op": "course",
+                  "course": "MATH 110"
+                },
+                {
+                  "op": "unknown",
+                  "reason": "equivalent linear algebra"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "kind": "corequisite",
+        "raw_text": "Strongly recommended corerequisite: STAT 133.",
+        "expression": {
+          "op": "any",
+          "items": [
+            {
+              "op": "course",
+              "course": "STAT 133"
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

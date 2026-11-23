@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Explore Berkeley courses with traceable catalog evidence.">
+<title>Berkeley Navigator</title><link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<header><a class="brand" href="./">B<span>Berkeley<br>Navigator</span></a><span class="badge">COURSE EXPLORER · MVP</span></header>
+<main>
+<section class="intro"><p class="eyebrow">YOUR NEXT CHAPTER</p><h1>Find a course.<br>Understand your path.</h1><p>Explore Berkeley’s catalog with official evidence and clear prerequisite checks.</p></section>
+<div class="workspace">
+<aside>
+<section class="panel"><h2>Your academic context</h2><p class="muted">Only held in this tab’s memory. Refreshing clears your profile and conversation.</p>
+<label for="year">Catalog year</label><input id="year" value="2026-2027" pattern="[0-9]{4}-[0-9]{4}" required>
+<label for="completed">Completed courses</label><textarea id="completed" rows="4" placeholder="CS 61A, CS 61B, MATH 54"></textarea><p class="hint">Separate course codes with commas or new lines.</p>
+<label class="checkbox"><input type="checkbox" id="complete">This is my complete course list.</label>
+<p class="hint">Otherwise, courses you haven’t listed are treated as unknown.</p>
+<button id="reset" class="secondary" type="button">Clear this session</button></section>
+<section class="note"><h2>Evidence comes first</h2><p>Only reviewed, published catalog records appear. Missing information stays unknown.</p><p>Prerequisite satisfaction does not guarantee enrollment, seats, or department approval.</p></section>
+</aside>
+<section class="panel chat-panel" aria-label="Course explorer">
+<div class="panel-heading"><h2>Explore & ask</h2><span id="connection" class="muted">Connecting…</span></div>
+<form id="search-form" class="search"><label class="sr-only" for="search">Search courses</label><input id="search" placeholder="Course code, title, or topic" maxlength="300" required><button type="submit">Search</button></form>
+<div id="conversation" role="log" aria-live="polite"><div class="welcome"><h3>What would you like to study?</h3><p>Search a topic or ask about prerequisites. Every result links back to the evidence used.</p><div class="suggestions"><button type="button" data-question="What are the prerequisites for CS 170?">Prerequisites for CS 170</button><button type="button" data-question="machine learning">Explore machine learning</button></div></div></div>
+<p id="status" role="status"></p>
+<form id="chat-form"><label class="sr-only" for="message">Your question</label><div class="composer"><textarea id="message" rows="2" maxlength="2000" placeholder="Ask about courses or follow up on a result…" required></textarea><button type="submit">Ask →</button></div></form>
+</section></div>
+<section id="results" aria-live="polite" aria-label="Course results"></section>
+</main><footer>Independent student project · Not affiliated with or endorsed by UC Berkeley.</footer>
+<script type="module" src="js/app.js"></script>
+</body></html>
