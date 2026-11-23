@@ -16,6 +16,10 @@ The previous Next.js/Express implementation, its original data and tests are pre
 
 **Data status:** the 21 preserved course records are validated *candidates*, not automatically approved facts. The catalog is intentionally empty until a human reviews and publishes records. The `2026-2027` candidate year is an import assumption requiring review. Synthetic records are used only in isolated tests. No live seats, enrollment guarantees, grade inference, or degree audit is implemented.
 
+## Interactive local demo
+
+Open http://localhost:8080 for the student app and http://localhost:8081 for the read-only academic review desk once the servers are running. See [the local demo and approval workflow](docs/local-demo.md). All 21 candidates remain pending until explicit human approval.
+
 ## Local setup
 
 Python 3.14 and PostgreSQL 17 were used for validation. Use a dedicated local/development database. Cloud credentials are optional for starting the server, but PostgreSQL is required for course retrieval.

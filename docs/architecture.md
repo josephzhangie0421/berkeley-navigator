@@ -39,7 +39,7 @@ The official `google-genai` SDK receives four function declarations from Pydanti
 
 The final student answer is assembled by the backend from returned course/evidence objects and deterministic checks. Arbitrary generated prose and URLs are not displayed. This limits conversational fluency but provides a verifiable boundary against invented academic facts and overridden outcomes. Missing evidence, malformed calls, rate limits, timeouts and model failure return explicit limitations plus real SQL fallback results when available.
 
-Default model: `gemini-2.5-flash-lite`, listed with free-tier text input/output pricing in Google's pricing documentation checked on 2026-11-22. Availability and quota are account-specific; `GEMINI_MODEL` is configurable and a live function-call test verifies the account's access. Pricing source: https://ai.google.dev/gemini-api/docs/pricing . SDK function-call source: https://googleapis.github.io/python-genai/ .
+Default model: `gemini-3.5-flash-lite`, listed with free-tier text input/output pricing in Google's pricing documentation checked on 2026-11-22. It passed real native function calling; the previous `gemini-2.5-flash-lite` configuration returned HTTP 404 during generation. Availability and quota are account-specific; `GEMINI_MODEL` is configurable and a live function-call test verifies the account's access. Pricing source: https://ai.google.dev/gemini-api/docs/pricing . SDK function-call source: https://googleapis.github.io/python-genai/ .
 
 ## Privacy and operations
 

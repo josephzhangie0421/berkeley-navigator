@@ -39,3 +39,16 @@ GitHub CLI/SSH authentication and Azure subscription access are verified. GitHub
 Supabase project/credentials, real Gemini access, Azure resource creation approval and deployment approval are pending. No successful cloud migration, Gemini live result, Azure resource creation or deployment is claimed here. Publication also requires human academic review; students see no imported records until that occurs.
 
 MVP limitations: conservative server-rendered answers instead of unrestricted generated prose; no grade/consent verification or automatic historical-course equivalence; no degree-audit implementation; no live seats/schedules; no distributed public abuse limiter; human review is a trusted operator CLI rather than an admin web app. These boundaries preserve accuracy and keep the implementation small.
+
+## Local demo follow-up — real services verified
+
+- Supabase PostgreSQL 17.12 connection verified with TLS; `001_catalog.sql` applied, checksum verified, and re-run confirmed idempotent.
+- All 21 imported candidates staged in the real Supabase development database. No academic candidates automatically approved or published.
+- Local student frontend: http://localhost:8080 ; FastAPI: http://localhost:8000 ; read-only academic review desk: http://localhost:8081 .
+- Added `scripts/review_report.py` and a read-only review page with source excerpts, nested logic, editable JSON downloads and an explicit human approval-command workflow. No HTTP publication endpoint was added.
+- Real `gemini-3.5-flash-lite` native function calling verified; defaults updated after `gemini-2.5-flash-lite` generation returned HTTP 404.
+- **69 tests passed, no skips**, with real Supabase integration, live Gemini smoke and the new HTTP end-to-end test enabled. The latter starts a real loopback FastAPI server and validates code/title/topic search, evidence attribution, all three prerequisite outcomes, and real multi-turn Gemini tool execution after a profile change. A fallback response fails the live test.
+- Positive end-to-end tests use explicitly synthetic records in disposable test schemas; they do not approve the 21 academic candidates or verify their academic truth. Citation checks verify attribution, not the reachability of synthetic fixture URLs.
+- The main demo correctly hides pending records and returns an explicit no-approved-information response. Populated student results require a human to review and approve records using the review desk/CLI.
+- Both static pages and `/api/health` and `/api/ready` returned HTTP 200. Computer Use could inventory Chrome but native control reported missing permission; the browser-access host also remained unavailable. **No browser interaction/visual verification is claimed.**
+- No Azure resources created and no deployment performed. See [local demo workflow](local-demo.md).

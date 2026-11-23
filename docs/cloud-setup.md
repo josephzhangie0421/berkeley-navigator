@@ -50,7 +50,7 @@ Official connection guide: https://supabase.com/docs/guides/database/connecting-
 
 1. Open https://aistudio.google.com/apikey and create/select a key for the intended project. Complete account/terms steps yourself. Verify free-tier eligibility; do not enable paid billing without approval.
 2. Save the key using the hidden local configuration prompt, or edit the existing mode-0600 root `.env` privately. Use `GEMINI_API_KEY`; never set it in frontend JavaScript.
-3. Run the explicit live test from README. It calls the real API and verifies native function calling. The initial default `gemini-2.5-flash-lite` is configurable; free-tier availability and quota must be confirmed for your project. The SDK is initialized explicitly with `GEMINI_API_KEY`, avoiding ambiguity if `GOOGLE_API_KEY` also exists.
+3. Run the explicit live test from README. It calls the real API and verifies native function calling. The verified default `gemini-3.5-flash-lite` is configurable; free-tier availability and quota must be confirmed for your project. The SDK is initialized explicitly with `GEMINI_API_KEY`, avoiding ambiguity if `GOOGLE_API_KEY` also exists.
 4. For hosting, use `scripts/cloud_secrets.py azure` to set backend application settings securely. CI's key belongs only in the development environment for manually enabled live tests.
 
 Official key guide: https://ai.google.dev/gemini-api/docs/api-key . Pricing: https://ai.google.dev/gemini-api/docs/pricing . Free-tier provider data handling differs from paid tiers; users should avoid entering sensitive personal information into chat.

@@ -39,7 +39,7 @@ resource api 'Microsoft.Web/sites@2023-12-01' = {
         { name: 'SCM_DO_BUILD_DURING_DEPLOYMENT', value: 'true' }
         { name: 'APP_ENV', value: environmentName }
         { name: 'CORS_ORIGINS', value: 'https://${frontend.properties.defaultHostname}' }
-        { name: 'GEMINI_MODEL', value: 'gemini-2.5-flash-lite' }
+        { name: 'GEMINI_MODEL', value: 'gemini-3.5-flash-lite' }
       ]
     }
   }
