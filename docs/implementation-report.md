@@ -21,7 +21,7 @@ The seed files contain **21 courses, 22 sources, 35 requirements and 95 relation
 ## Verification
 
 - Legacy baseline: 31 backend + 22 frontend tests passed.
-- New suite: **66 passed, 1 skipped** on local PostgreSQL 17; the skip is the explicit live Gemini test.
+- New suite: **67 passed, 1 skipped** on local PostgreSQL 17; the skip is the explicit live Gemini test.
 - Real database tests cover migration idempotency, exact/title/FTS retrieval, source links, pending exclusion, evidence visibility, publication constraints, historical revisions and immutability.
 - HTTPX tests cover API responses, validation, body limits, missing records/configuration and real SQL-backed checks.
 - Deterministic mocked Gemini tests cover multiple calls, malformed/unknown tools, profile/year tampering, call/round limits, upstream failures and suppression of fabricated prose/URLs.
@@ -34,7 +34,7 @@ The seed files contain **21 courses, 22 sources, 35 requirements and 95 relation
 
 ## Cloud state and remaining work
 
-GitHub CLI/SSH authentication and Azure subscription access are verified. GitHub Actions is enabled. Supabase initially listed no projects. Azure initially listed no resources. The local application and tests use actual local PostgreSQL, not a SQLite/PGlite or in-memory substitute.
+GitHub CLI/SSH authentication and Azure subscription access are verified. GitHub Actions is enabled; the first redesign CI run passed: https://github.com/josephzhangie0421/berkeley-navigator/actions/runs/45106307691 . The development environment exists with `DEPLOY_ENABLED=false`. Supabase initially listed no projects. Azure initially listed no resources. The local application and tests use actual local PostgreSQL, not a SQLite/PGlite or in-memory substitute.
 
 Supabase project/credentials, real Gemini access, Azure resource creation approval and deployment approval are pending. No successful cloud migration, Gemini live result, Azure resource creation or deployment is claimed here. Publication also requires human academic review; students see no imported records until that occurs.
 

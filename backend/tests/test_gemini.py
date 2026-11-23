@@ -70,3 +70,10 @@ async def test_live_gemini():
         assert response.function_calls
         assert response.function_calls[0].name=='get_course'
     finally:await model.close()
+
+async def test_evidence_only_tool_result_is_not_reported_as_missing(fake_catalog):
+    model=FakeModel([reply(('get_evidence',{'evidence_id':1,'catalog_year':'2026-2027'})),reply(text='done')])
+    result=await chat(ChatRequest(message='Show the source',catalog_year='2026-2027'),fake_catalog,Settings(),model)
+    assert result.mode=='gemini' and len(result.evidence)==1
+    assert not result.courses
+    assert 'Retrieved verified source' in result.message

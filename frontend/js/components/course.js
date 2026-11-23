@@ -41,3 +41,11 @@ export function courseCard(course, check, onCheck) {
     element('blockquote', course.evidence.text)); card.append(details);
   return card;
 }
+
+export function evidenceCard(evidence) {
+  const card = element('article', undefined, 'panel course');
+  card.append(element('h3', 'Official source evidence'), source(evidence),
+    element('p', `Collected ${new Date(evidence.collected_at).toLocaleDateString()}`, 'muted'),
+    element('blockquote', evidence.text));
+  return card;
+}

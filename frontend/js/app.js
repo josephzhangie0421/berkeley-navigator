@@ -1,7 +1,7 @@
 import { api } from './api.js';
-import { element, courseCard } from './components/course.js';
+import { element, courseCard, evidenceCard } from './components/course.js';
 const $ = id => document.getElementById(id);
-let history = [], courses = [], checks = [], busy = false;
+let history = [], courses = [], checks = [], evidence = [], busy = false;
 function profile() {
   return { completed_courses: $('completed').value.split(/[,\n]/).map(s => s.trim()).filter(Boolean), complete: $('complete').checked };
 }
@@ -16,13 +16,14 @@ function bubble(role, text) {
 }
 async function run(task) {
   if (busy) return;
-  busy = true; document.querySelectorAll('button').forEach(b => b.disabled = true); $('status').textContent = 'Looking up published evidence…';
+  busy = true; document.querySelectorAll('button, input, textarea').forEach(b => b.disabled = true); $('status').textContent = 'Looking up published evidence…';
   try { await task(); $('status').textContent = ''; }
   catch (error) { $('status').textContent = error.message || 'Could not complete the request.'; }
-  finally { busy = false; document.querySelectorAll('button').forEach(b => b.disabled = false); }
+  finally { busy = false; document.querySelectorAll('button, input, textarea').forEach(b => b.disabled = false); }
 }
 function render() {
   $('results').replaceChildren(...courses.map(course => courseCard(course, checks.find(c => c.course_code === course.course_code), onCheck)));
+  if (!courses.length) evidence.forEach(item => $('results').append(evidenceCard(item)));
 }
 function onCheck(course) {
   run(async () => {
@@ -38,18 +39,18 @@ async function ask(message) {
     bubble('assistant', `${answer.message}\n\n${answer.limitations.join('\n')}`);
     // Include server-returned course codes to make follow-ups explicit, without storing tool transcripts.
     history.push({role:'user',text:message},{role:'assistant',text:`${answer.message}\n${answer.courses.map(c => c.course_code).join(', ')}`.slice(0,4000)});
-    history = history.slice(-12); courses = answer.courses; checks = answer.checks; render();
+    history = history.slice(-12); courses = answer.courses; checks = answer.checks; evidence = answer.evidence; render();
   });
 }
 $('chat-form').addEventListener('submit', event => { event.preventDefault(); const message = $('message').value.trim(); if (message) ask(message); });
 $('search-form').addEventListener('submit', event => {
   event.preventDefault(); run(async () => {
     courses = await api(`/api/courses?${new URLSearchParams({query:$('search').value.trim(),catalog_year:year()})}`);
-    checks = []; render(); bubble('assistant', courses.length ? `Found ${courses.length} published courses.` : 'No published matches. Records may still be awaiting review.');
+    checks = []; evidence = []; render(); bubble('assistant', courses.length ? `Found ${courses.length} published courses.` : 'No published matches. Records may still be awaiting review.');
   });
 });
 document.querySelectorAll('[data-question]').forEach(button => button.addEventListener('click', () => ask(button.dataset.question)));
-$('reset').addEventListener('click', () => { history=[];courses=[];checks=[]; $('completed').value='';$('complete').checked=false;$('message').value='';$('search').value='';$('conversation').replaceChildren();render();$('status').textContent='Session cleared.'; });
+$('reset').addEventListener('click', () => { history=[];courses=[];checks=[];evidence=[]; $('completed').value='';$('complete').checked=false;$('message').value='';$('search').value='';$('conversation').replaceChildren();render();$('status').textContent='Session cleared.'; });
 for (const id of ['completed','complete']) $(id).addEventListener('input', () => { checks=[]; render(); });
-$('year').addEventListener('change', () => { courses=[];checks=[];history=[];$('conversation').replaceChildren();render(); });
+$('year').addEventListener('change', () => { courses=[];checks=[];history=[];evidence=[];$('conversation').replaceChildren();render(); });
 api('/api/health').then(result => { $('connection').textContent=result.database_configured ? 'Course service connected' : 'Database setup pending'; }).catch(() => { $('connection').textContent='Service offline'; });

@@ -46,6 +46,8 @@ def compose(runner, mode, limitations, count):
         message = '\n'.join(f'{c.course_code}: {c.evaluation.outcome.replace("_"," ")}. {c.evaluation.reason}' for c in runner.checks.values())
     elif runner.courses:
         message = f'Found {len(runner.courses)} published course record(s). Official evidence and catalog details appear below.'
+    elif runner.evidence:
+        message = 'Retrieved verified source evidence linked to published academic facts.'
     else:
         message = 'No approved course information was found for this request and catalog year. This does not mean the course or its prerequisites do not exist.'
     return ChatResponse(message=message,mode=mode,courses=list(runner.courses.values()),checks=list(runner.checks.values()),
