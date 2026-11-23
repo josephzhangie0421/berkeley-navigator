@@ -1,0 +1,65 @@
+name: Deploy approved environment
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: Target GitHub environment (configure reviewers before enabling)
+        type: choice
+        options: [development, production]
+        default: development
+permissions:
+  contents: read
+  id-token: write
+concurrency:
+  group: deploy-${{ inputs.environment }}
+  cancel-in-progress: false
+jobs:
+  test:
+    uses: ./.github/workflows/ci.yml
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Require explicit deployment configuration
+        env:
+          ENABLED: ${{ vars.DEPLOY_ENABLED }}
+        run: test "$ENABLED" = true
+      - uses: azure/login@v2
+        with:
+          client-id: ${{ vars.AZURE_CLIENT_ID }}
+          tenant-id: ${{ vars.AZURE_TENANT_ID }}
+          subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+      - name: Prepare backend artifact
+        run: |
+          mkdir -p .deploy/backend
+          cp -R backend/app .deploy/backend/app
+          cp backend/requirements.txt .deploy/backend/requirements.txt
+      - uses: azure/webapps-deploy@v3
+        with:
+          app-name: ${{ vars.AZURE_WEBAPP_NAME }}
+          package: .deploy/backend
+      - name: Configure public API origin
+        env:
+          API_BASE_URL: ${{ vars.API_BASE_URL }}
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          from urllib.parse import urlsplit
+          url=os.environ['API_BASE_URL'].rstrip('/')
+          parsed=urlsplit(url)
+          assert parsed.scheme=='https' and parsed.hostname.endswith('.azurewebsites.net')
+          Path('frontend/js/config.js').write_text('export const API_BASE_URL = '+json.dumps(url)+';\n')
+          PY
+      - uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+          action: upload
+          app_location: frontend
+          output_location: ''
+          skip_app_build: true
